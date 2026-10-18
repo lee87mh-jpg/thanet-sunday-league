@@ -1,10 +1,12 @@
 # Thanet Sunday Football League — Website Prototype
 
-An independent website prototype for the **Martini Airport Transfers Thanet Sunday Football League**, season 2026/27. Built with HTML, CSS and vanilla JavaScript for free hosting on GitHub Pages.
+An independent, monochrome, badge-led website prototype for the **Martini Airport Transfers Thanet Sunday Football League**, season 2026/27. Built with HTML, CSS and vanilla JavaScript for free hosting on GitHub Pages.
 
 **Preview URL after GitHub Pages is enabled:** https://lee87mh-jpg.github.io/thanet-sunday-league/
 
 ## Pages included
+- Authentic black-and-white league badge in the header, hero and footer (optimised from supplied image)
+- Black, white and soft grey theme, replacing the initial green palette
 - Responsive home / matchday preview
 - First Division table snapshot
 - Fixtures and results with filters
@@ -24,6 +26,6 @@ An independent website prototype for the **Martini Airport Transfers Thanet Sund
 4. Allow GitHub Pages to publish and visit the preview URL above.
 
 ## Updating
-Edit \`SNAPSHOT\` at the top of \`app.js\` and make a commit. If approved league feeds are later supplied, replace the static snapshot views with their official embeds. CSS lives in \`styles.css\`; markup lives in \`index.html\`.
+Edit \`SNAPSHOT\` at the top of \`app.js\` and make a commit. If approved league feeds are later supplied, replace the static snapshot views with their official embeds. CSS lives in \`styles.css\`; markup lives in \`index.html\`. The badge asset is \`assets/thanet-league-badge.svg\`.
 
 There are no npm dependencies, server bills, databases or build steps. Hosting as a public repository on GitHub Pages is free under GitHub's current plan offering.
