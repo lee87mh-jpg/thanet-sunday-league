@@ -57,7 +57,7 @@
       const tag=own>other?"W":own<other?"L":"D";
       const opponent=name(m.homeId===id?m.awayId:m.homeId);
       const full=tag==="W"?"Win":tag==="L"?"Loss":"Draw";
-      return '<span class="form-chip form-'+tag.toLowerCase()+'" title="'+clean(full+" vs "+opponent)+"" aria-label="'+clean(full+" against "+opponent)+'">'+tag+'</span>';
+      return '<span class="form-chip form-'+tag.toLowerCase()+'" title="'+clean(full+" vs "+opponent)+'" aria-label="'+clean(full+" against "+opponent)+'">'+tag+'</span>';
     }).join("");
     return '<div class="form-row">'+buttons+'</div><p class="form-summary">Most recent recorded league result first · '+games.length+' match'+(games.length===1?"":"es")+' available.</p>';
   }
