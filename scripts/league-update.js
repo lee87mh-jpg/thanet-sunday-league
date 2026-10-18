@@ -37,6 +37,7 @@ try{src=new URL(batch.sourceUrl);}catch{fail("sourceUrl must be a URL");}
 if(src.protocol!=="https:"||src.hostname!=="fulltime.thefa.com"||src.pathname!=="/index.html"||src.searchParams.get("league")!=="391033232")fail("Use the official Thanet league Full-Time URL as sourceUrl");
 if(typeof batch.notes!=="string"||batch.notes.trim().length<8)fail("Include a useful source verification note");
 const ids=new Set(data.clubs.map(c=>c.id));
+const competitions=new Map((data.competitions||[]).map(c=>[c.id,c]));
 const divisionMembers=id=>new Set(data.clubs.filter(c=>c.division===id).map(c=>c.id));
 let changedTables=0,changedMatches=0;
 if(batch.standings!==undefined){
@@ -67,7 +68,7 @@ if(batch.matches!==undefined){
   const incoming=new Set();
   for(const [i,row] of batch.matches.entries()){
     object(row,"matches["+i+"]");
-    keys(row,["id","date","homeId","awayId","status","competition","division","homeScore","awayScore","kickoff","venue"],"match "+i);
+    keys(row,["id","date","homeId","awayId","status","competition","division","competitionId","homeScore","awayScore","kickoff","venue"],"match "+i);
     if(typeof row.id!=="string"||!/^(fx|rs|m)-[a-zA-Z0-9-]{3,70}$/.test(row.id))fail("Supply a stable valid match ID (e.g. fx-001 or m-20261025-shrimpos-monkton)");
     if(incoming.has(row.id))fail("Duplicate match ID in pending update: "+row.id);
     incoming.add(row.id);
@@ -81,9 +82,16 @@ if(batch.matches!==undefined){
     const prior=existingIndex>=0?data.matches[existingIndex]:null;
     if(prior && (prior.homeId!==row.homeId||prior.awayId!==row.awayId||prior.competition!==row.competition))fail("Existing match "+row.id+" has a changed club/competition; investigate rather than silently relink");
     if(prior&&prior.status==="final"&&row.status==="scheduled")fail("Cannot revert final result to scheduled for "+row.id);
+    const competitionId=row.competitionId||prior?.competitionId;
+    const competition=competitions.get(competitionId);
+    if(!competition)fail("Missing or unrecognised competitionId for "+row.id);
+    if(competition.kind!==row.competition)fail("Competition type mismatch for "+row.id);
+    if(competition.division!==row.division)fail("Cup/league division does not match competition registry: "+row.id);
+    if(competition.verification==="historical-name-pending-2026")fail("Cannot assign a fixture to unverified 2026/27 divisional cup: "+competition.name);
+
     const duplicate=data.matches.find(m=>m.id!==row.id&&m.date===row.date&&m.homeId===row.homeId&&m.awayId===row.awayId&&m.competition===row.competition);
     if(duplicate)fail("Possible duplicate match: "+row.id+" versus "+duplicate.id);
-    const m={id:row.id,date:row.date,homeId:row.homeId,awayId:row.awayId,competition:row.competition,division:row.division,status:row.status};
+    const m={id:row.id,date:row.date,homeId:row.homeId,awayId:row.awayId,competition:row.competition,division:row.division,competitionId,status:row.status};
     if(row.kickoff!==undefined&&row.kickoff!==null){
       if(typeof row.kickoff!=="string"||!/^([01]\d|2[0-3]):[0-5]\d$/.test(row.kickoff))fail("Kick-off must be HH:MM for "+row.id);
       m.kickoff=row.kickoff;
