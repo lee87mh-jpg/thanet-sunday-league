@@ -7,7 +7,7 @@
   const clubs=Object.fromEntries(db.clubs.map(c=>[c.id,c]));
   const name=id=>clubs[id]?.name||"Unknown club";
   const dateText=d=>new Date(d+"T12:00:00").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
-  const kind=m=>m.competition==="cup"?"Cup competition":"League";
+  const kind=m=>db.competitions?.find(c=>c.id===m.competitionId)?.name||(m.competition==="cup"?"Cup competition to confirm":"League");
   const detailsLink=(c)=>{
     const href=profileHref(c.name);
     const badge=c.badge?'<img src="./'+clean(c.badge)+'" loading="lazy" decoding="async" alt="">':'<span class="match-page-initials">'+clean(initials(c.name))+'</span>';
@@ -70,6 +70,7 @@
     byId("match-title").textContent=pageType+" · "+db.season;
     byId("match-details-title").textContent=final?"Result details":"Fixture details";
     byId("match-competition").textContent="MATCH CENTRE · "+kind(match).toUpperCase();
+    if(match.competition==="cup"&&match.competitionId==="kent-county-cup-unassigned")byId("match-competition").textContent="MATCH CENTRE · COUNTY CUP (NAME TO CONFIRM)";
     byId("match-home").innerHTML=detailsLink(home);
     byId("match-away").innerHTML=detailsLink(away);
     byId("match-score").textContent=final?match.homeScore+" – "+match.awayScore:"VS";
