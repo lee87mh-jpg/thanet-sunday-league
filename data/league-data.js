@@ -1,5 +1,5 @@
 "use strict";
-/** Canonical saved football records. Named cups are verified historically only; their 2026/27 participation and existing generic cup results remain unverified. */
+/** One saved league dataset. Historical cup names are unconfirmed for 2026/27. No generic cup ties are assigned to a named cup without evidence. */
 window.TSL_DATA=Object.freeze({
   "schemaVersion": 1,
   "season": "2026/27",
@@ -647,7 +647,7 @@ window.TSL_DATA=Object.freeze({
       "status": "final",
       "homeScore": 4,
       "awayScore": 5,
-      "competitionId": "kent-county-cup-unassigned",
+      "competitionId": "cup-unassigned",
       "cupId": null
     },
     {
@@ -660,7 +660,7 @@ window.TSL_DATA=Object.freeze({
       "status": "final",
       "homeScore": 0,
       "awayScore": 5,
-      "competitionId": "kent-county-cup-unassigned",
+      "competitionId": "cup-unassigned",
       "cupId": null
     },
     {
@@ -673,7 +673,7 @@ window.TSL_DATA=Object.freeze({
       "status": "final",
       "homeScore": 1,
       "awayScore": 0,
-      "competitionId": "kent-county-cup-unassigned",
+      "competitionId": "cup-unassigned",
       "cupId": null
     },
     {
@@ -686,7 +686,7 @@ window.TSL_DATA=Object.freeze({
       "status": "final",
       "homeScore": 4,
       "awayScore": 3,
-      "competitionId": "kent-county-cup-unassigned",
+      "competitionId": "cup-unassigned",
       "cupId": null
     },
     {
@@ -699,7 +699,7 @@ window.TSL_DATA=Object.freeze({
       "status": "final",
       "homeScore": 13,
       "awayScore": 1,
-      "competitionId": "kent-county-cup-unassigned",
+      "competitionId": "cup-unassigned",
       "cupId": null
     },
     {
@@ -712,7 +712,7 @@ window.TSL_DATA=Object.freeze({
       "status": "final",
       "homeScore": 4,
       "awayScore": 0,
-      "competitionId": "kent-county-cup-unassigned",
+      "competitionId": "cup-unassigned",
       "cupId": null
     },
     {
@@ -838,6 +838,22 @@ window.TSL_DATA=Object.freeze({
   ],
   "competitions": [
     {
+      "id": "league-first",
+      "name": "First Division league",
+      "kind": "league",
+      "division": "first",
+      "verification": "confirmed-existence",
+      "seasonStatus": "confirmed"
+    },
+    {
+      "id": "league-second",
+      "name": "Second Division league",
+      "kind": "league",
+      "division": "second",
+      "verification": "confirmed-existence",
+      "seasonStatus": "confirmed"
+    },
+    {
       "id": "challenge-cup",
       "name": "Challenge Cup",
       "type": "cup",
@@ -845,7 +861,9 @@ window.TSL_DATA=Object.freeze({
       "seasonStatus": "unconfirmed",
       "evidenceSeason": "2024/25",
       "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
-      "notes": "Historic league cup name; 2026/27 competition and eligibility not yet independently confirmed."
+      "notes": "Historic league cup name; 2026/27 competition and eligibility not yet independently confirmed.",
+      "kind": "cup",
+      "verification": "historical-name-pending-2026"
     },
     {
       "id": "challenge-trophy",
@@ -855,7 +873,9 @@ window.TSL_DATA=Object.freeze({
       "seasonStatus": "unconfirmed",
       "evidenceSeason": "2024/25",
       "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
-      "notes": "Historic league cup name; division and 2026/27 competition not yet verified."
+      "notes": "Historic league cup name; division and 2026/27 competition not yet verified.",
+      "kind": "cup",
+      "verification": "historical-name-pending-2026"
     },
     {
       "id": "first-division-cup",
@@ -865,7 +885,9 @@ window.TSL_DATA=Object.freeze({
       "seasonStatus": "unconfirmed",
       "evidenceSeason": "2024/25",
       "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
-      "notes": "Historically contested by the First Division; 2026/27 status awaits confirmation."
+      "notes": "Historically contested by the First Division; 2026/27 status awaits confirmation.",
+      "kind": "cup",
+      "verification": "historical-name-pending-2026"
     },
     {
       "id": "second-division-cup",
@@ -875,7 +897,9 @@ window.TSL_DATA=Object.freeze({
       "seasonStatus": "unconfirmed",
       "evidenceSeason": "2024/25",
       "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
-      "notes": "Historically contested by the Second Division; 2026/27 status awaits confirmation."
+      "notes": "Historically contested by the Second Division; 2026/27 status awaits confirmation.",
+      "kind": "cup",
+      "verification": "historical-name-pending-2026"
     },
     {
       "id": "chris-sear-memorial-cup",
@@ -885,7 +909,9 @@ window.TSL_DATA=Object.freeze({
       "seasonStatus": "unconfirmed",
       "evidenceSeason": "2024/25",
       "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
-      "notes": "Historic league competition. Current eligibility and participation await confirmation."
+      "notes": "Historic league competition. Current eligibility and participation await confirmation.",
+      "kind": "cup",
+      "verification": "historical-name-pending-2026"
     },
     {
       "id": "chris-sear-memorial-shield",
@@ -895,7 +921,21 @@ window.TSL_DATA=Object.freeze({
       "seasonStatus": "unconfirmed",
       "evidenceSeason": "2024/25",
       "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
-      "notes": "Historic league competition. Current eligibility and participation await confirmation."
+      "notes": "Historic league competition. Current eligibility and participation await confirmation.",
+      "kind": "cup",
+      "verification": "historical-name-pending-2026"
+    },
+    {
+      "id": "cup-unassigned",
+      "name": "Cup competition not yet identified",
+      "kind": "cup",
+      "type": "cup",
+      "division": null,
+      "verification": "unknown-cup-tie",
+      "seasonStatus": "unconfirmed",
+      "evidenceSeason": "2026/27",
+      "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
+      "notes": "Only generic Cup designation recorded; specific competition remains unverified."
     }
   ]
 });
