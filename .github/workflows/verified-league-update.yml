@@ -57,6 +57,7 @@ jobs:
           node tests/validate-club-profiles.js
           node tests/validate-match-centre.js
           node tests/validate-update-workflow.js
+          node tests/validate-cup-competitions.js
       - name: Commit the verified published snapshot
         if: ${{ inputs.operation == 'publish' }}
         run: |
