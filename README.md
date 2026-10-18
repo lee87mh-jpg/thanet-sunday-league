@@ -15,6 +15,7 @@ Multi-page, mobile-friendly, **GitHub Pages** site for the Martini Airport Trans
 | Cups | `cups.html` |
 | Clubs | `clubs.html` |
 | Individual club profile | `club.html?club=<profileSlug>` |
+| Match centre | `match.html?match=<matchId>` |
 | News | `news.html` |
 | About | `about.html` |
 
@@ -29,7 +30,7 @@ The file contains:
 - `matches`: fixtures and results with `homeId`/`awayId` referencing the same club records, not club-name strings.
 - `source` and `snapshotDate`: provenance / freshness.
 
-The page renderer `site-v5.js` reads `window.TSL_DATA`, resolves names and badges, and filters matches for each club through stable IDs. It rebuilds each view on page load; the HTML includes a loading/official-source fallback rather than separate hard-coded football lists. Both scripts are loaded in order with `defer`. No database or paid hosting is needed.
+The page renderer `site-v6.js` reads `window.TSL_DATA`, resolves names and badges, and filters matches for each club through stable IDs. It rebuilds each view on page load; the HTML includes a loading/official-source fallback rather than separate hard-coded football lists. Both scripts are loaded in order with `defer`. No database or paid hosting is needed.
 
 ## Individual club profiles
 
@@ -37,9 +38,13 @@ Every listed First/Second Division club has a unique, shareable URL such as [Ram
 
 Each profile displays the club badge and division, available league position/points/statistics, scheduled fixtures, recorded results, and league form *only from the recorded results in the snapshot*. Missing home ground/website/Second Division standings are explicitly unconfirmed. Club profiles are linked from the club directory, both league table views and match cards, including home-page previews. External cup opponents do not receive official league profiles.
 
-**How to update a club:** change that one `clubs` entry; its name and badge update automatically wherever it appears in tables, fixtures, results and club lists. To add a fixture, insert one match with valid `homeId`/`awayId`. Profiles already use `profileSlug` and club ID matching; the same match references will support deeper match pages later.
+## Match centre
 
-**Validation:** run `node tests/validate-league-data.js` and `node tests/validate-club-profiles.js` after editing the data file. This checks duplicate IDs, references, standings and local badge assets.
+Every recorded fixture and result has a shareable URL such as `match.html?match=fx-001` or `match.html?match=rs-001`. All match information comes from the existing `matches` records and their stable IDs in `data/league-data.js`. The single `match.html` template and `match-centre.js` render both clubs' badges/names, recorded match date, competition, status and score when final. Unknown kick-off times, venues and unverified match details are explicitly marked as missing. Results, fixtures, club profiles, cup-result previews and homepage match previews link to the match page through their scores or VS boxes. Team names link to club profiles where available. No match data is duplicated between HTML files.
+
+**How to update a club:** change that one `clubs` entry; its name and badge update automatically wherever it appears in tables, fixtures, results and club lists. To add a fixture, insert one match with valid `homeId`/`awayId`. Profiles already use `profileSlug` and club ID matching. Match-centre URLs use the saved match `id`.
+
+**Validation:** run `node tests/validate-league-data.js` and `node tests/validate-club-profiles.js` and `node tests/validate-match-centre.js` after editing the data file. This checks duplicate IDs, references, standings and local badge assets.
 
 ## Source and publishing
 
@@ -52,4 +57,4 @@ Each profile displays the club badge and division, available league position/poi
 
 ## Future work
 
-See [ROADMAP.md](ROADMAP.md) for the saved eight-stage plan. **Club profiles are implemented.** The next planned system is the full match centre. Further profile details await verified club information.
+See [ROADMAP.md](ROADMAP.md) for the saved development plan. **Club profiles and the initial Match Centre are implemented.** Next priority: a reliable authorised data-update workflow. Detailed match reports and club information await verified sources.
