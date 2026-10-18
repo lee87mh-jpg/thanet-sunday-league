@@ -24,10 +24,10 @@
    const fixture=list.filter(m=>m.status==="scheduled").sort((a,b)=>a.date.localeCompare(b.date));
    const result=list.filter(m=>m.status==="final").sort((a,b)=>b.date.localeCompare(a.date));
    const description=pending?
-     "This name has been used for a divisional cup in earlier seasons, but we have not confirmed the official 2026/27 cup title, entry rules, draw or fixtures. No results are attributed to it without verification.":
-     cup.verification==="confirmed-existence"?
-     "This Kent FA cup competition is known by this name, but we have not individually verified whether the saved county-cup results belong to this specific tournament. Confirm all ties on FA Full-Time.":
-     "The saved match results were marked as County Cup ties by FA Full-Time. Their exact county competitions have not been individually confirmed, so we keep them in this temporary category rather than inventing a cup name.";
+     "This cup name appears in previous seasons' league coverage, but its official 2026/27 status, eligibility, draw and fixtures are not yet confirmed. No saved cup ties have been allocated to it without verification.":
+     cup.verification==="unknown-cup-tie"?
+     "These results were recorded only as cup matches in the saved FA Full-Time snapshot. Their specific cup competitions have not been identified; they are grouped here to avoid incorrect attribution.":
+     "The saved competition details are being checked. Confirm the most recent information with FA Full-Time.";
    el("cup-description").textContent=description+" Saved data: "+dateLabel(db.snapshotDate)+".";
    const render=(rows,id,empty)=>el(id).innerHTML=rows.length?rows.map(m=>matchCard(matchDisplay(m),m.status==="final")).join(""):'<p class="cup-empty">'+empty+'</p>';
    render(fixture,"cup-fixtures","No confirmed fixtures are currently recorded for this competition.");
