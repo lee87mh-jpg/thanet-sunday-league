@@ -1,5 +1,5 @@
 "use strict";
-/** Canonical, dated football data. Competitions have stable IDs; unverified cup ties are explicitly unassigned. No live feed. */
+/** Canonical saved football records. Named cups are verified historically only; their 2026/27 participation and existing generic cup results remain unverified. */
 window.TSL_DATA=Object.freeze({
   "schemaVersion": 1,
   "season": "2026/27",
@@ -647,7 +647,8 @@ window.TSL_DATA=Object.freeze({
       "status": "final",
       "homeScore": 4,
       "awayScore": 5,
-      "competitionId": "kent-county-cup-unassigned"
+      "competitionId": "kent-county-cup-unassigned",
+      "cupId": null
     },
     {
       "id": "rs-003",
@@ -659,7 +660,8 @@ window.TSL_DATA=Object.freeze({
       "status": "final",
       "homeScore": 0,
       "awayScore": 5,
-      "competitionId": "kent-county-cup-unassigned"
+      "competitionId": "kent-county-cup-unassigned",
+      "cupId": null
     },
     {
       "id": "rs-004",
@@ -671,7 +673,8 @@ window.TSL_DATA=Object.freeze({
       "status": "final",
       "homeScore": 1,
       "awayScore": 0,
-      "competitionId": "kent-county-cup-unassigned"
+      "competitionId": "kent-county-cup-unassigned",
+      "cupId": null
     },
     {
       "id": "rs-005",
@@ -683,7 +686,8 @@ window.TSL_DATA=Object.freeze({
       "status": "final",
       "homeScore": 4,
       "awayScore": 3,
-      "competitionId": "kent-county-cup-unassigned"
+      "competitionId": "kent-county-cup-unassigned",
+      "cupId": null
     },
     {
       "id": "rs-006",
@@ -695,7 +699,8 @@ window.TSL_DATA=Object.freeze({
       "status": "final",
       "homeScore": 13,
       "awayScore": 1,
-      "competitionId": "kent-county-cup-unassigned"
+      "competitionId": "kent-county-cup-unassigned",
+      "cupId": null
     },
     {
       "id": "rs-007",
@@ -707,7 +712,8 @@ window.TSL_DATA=Object.freeze({
       "status": "final",
       "homeScore": 4,
       "awayScore": 0,
-      "competitionId": "kent-county-cup-unassigned"
+      "competitionId": "kent-county-cup-unassigned",
+      "cupId": null
     },
     {
       "id": "rs-008",
@@ -832,52 +838,64 @@ window.TSL_DATA=Object.freeze({
   ],
   "competitions": [
     {
-      "id": "league-first",
-      "name": "First Division",
-      "kind": "league",
-      "division": "first",
-      "verification": "confirmed",
-      "notes": "First Division 2026/27"
+      "id": "challenge-cup",
+      "name": "Challenge Cup",
+      "type": "cup",
+      "division": null,
+      "seasonStatus": "unconfirmed",
+      "evidenceSeason": "2024/25",
+      "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
+      "notes": "Historic league cup name; 2026/27 competition and eligibility not yet independently confirmed."
     },
     {
-      "id": "league-second",
-      "name": "Second Division",
-      "kind": "league",
-      "division": "second",
-      "verification": "confirmed",
-      "notes": "Second Division 2026/27; no verified league matches in saved snapshot"
+      "id": "challenge-trophy",
+      "name": "Challenge Trophy",
+      "type": "cup",
+      "division": null,
+      "seasonStatus": "unconfirmed",
+      "evidenceSeason": "2024/25",
+      "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
+      "notes": "Historic league cup name; division and 2026/27 competition not yet verified."
     },
     {
       "id": "first-division-cup",
       "name": "First Division Cup",
-      "kind": "cup",
+      "type": "cup",
       "division": "first",
-      "verification": "historical-name-pending-2026",
-      "notes": "Historical divisional cup terminology; exact 2026/27 title and eligibility require league confirmation."
+      "seasonStatus": "unconfirmed",
+      "evidenceSeason": "2024/25",
+      "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
+      "notes": "Historically contested by the First Division; 2026/27 status awaits confirmation."
     },
     {
       "id": "second-division-cup",
       "name": "Second Division Cup",
-      "kind": "cup",
+      "type": "cup",
       "division": "second",
-      "verification": "historical-name-pending-2026",
-      "notes": "Historical divisional cup terminology; exact 2026/27 title and eligibility require league confirmation."
+      "seasonStatus": "unconfirmed",
+      "evidenceSeason": "2024/25",
+      "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
+      "notes": "Historically contested by the Second Division; 2026/27 status awaits confirmation."
     },
     {
-      "id": "kent-sunday-junior-cup",
-      "name": "Kent Sunday Junior Cup",
-      "kind": "cup",
+      "id": "chris-sear-memorial-cup",
+      "name": "Chris Sear Memorial Cup",
+      "type": "cup",
       "division": null,
-      "verification": "confirmed-existence",
-      "notes": "Kent FA county competition exists; no October 2026 match in this dataset has been individually verified as belonging to this cup."
+      "seasonStatus": "unconfirmed",
+      "evidenceSeason": "2024/25",
+      "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
+      "notes": "Historic league competition. Current eligibility and participation await confirmation."
     },
     {
-      "id": "kent-county-cup-unassigned",
-      "name": "Kent FA County Cups — cup name to confirm",
-      "kind": "cup",
+      "id": "chris-sear-memorial-shield",
+      "name": "Chris Sear Memorial Shield",
+      "type": "cup",
       "division": null,
-      "verification": "pending-match-identification",
-      "notes": "18 October results labelled CC by FA Full-Time; per-match exact county cup not confirmed."
+      "seasonStatus": "unconfirmed",
+      "evidenceSeason": "2024/25",
+      "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
+      "notes": "Historic league competition. Current eligibility and participation await confirmation."
     }
   ]
 });
