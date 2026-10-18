@@ -457,3 +457,42 @@
 @media(prefers-reduced-motion:reduce){
   .home-features .editorial-card{transition:none}
 }
+
+
+/* Club crests across league standings, match centre and club directory */
+.badge-icon{display:inline-flex;align-items:center;justify-content:center;flex:none;background:#fff;border:1px solid #e0e0dc;border-radius:6px;overflow:hidden;vertical-align:middle}
+.badge-icon img{display:block;width:100%;height:100%;object-fit:contain;padding:2px}
+.badge-icon.badge-xs{width:25px;height:25px}
+.badge-icon.badge-sm{width:35px;height:35px}
+.badge-icon.badge-lg{width:48px;height:48px}
+.badge-table-club{display:inline-flex;align-items:center;gap:6px;min-width:0;max-width:100%;font-weight:800;line-height:1.2}
+.badge-table-club>span:last-child{min-width:0;overflow-wrap:anywhere}
+.badge-team{display:inline-flex;align-items:center;gap:7px;min-width:0;max-width:100%;font-weight:800;line-height:1.2}
+.badge-team.home{justify-content:flex-end}
+.badge-team.away{justify-content:flex-start}
+.badge-team>span:last-child{min-width:0;overflow-wrap:anywhere}
+.match-row .badge-match-home,.match-row .badge-match-away,.teams-small .badge-mini-home,.teams-small .badge-mini-away,.badge-inline-strong{display:flex;min-width:0;align-items:center;gap:5px}
+.match-row .badge-match-home,.teams-small .badge-mini-home{justify-content:flex-end;text-align:right}
+.match-row .badge-match-away,.teams-small .badge-mini-away{justify-content:flex-start;text-align:left}
+.badge-inline-strong{font-weight:800}
+.match-row .badge-icon{width:35px;height:35px}
+.teams-small .badge-icon{width:23px;height:23px}
+.small-match .team{display:flex;min-width:0;align-items:center;font-size:.72rem;gap:5px}
+.small-match .team:first-child{justify-content:flex-end;text-align:right}
+.small-match .team:last-child{justify-content:flex-start;text-align:left}
+.small-match .badge-icon{width:25px;height:25px}
+.club-card>.badge-icon{width:48px;height:48px;flex:none;border-radius:9px}
+#overview-table .badge-icon{width:22px;height:22px}
+#overview-table .badge-table-club{gap:4px}
+#overview-table .standings th:nth-child(2){min-width:132px}
+@media(max-width:590px){
+ .badge-icon.badge-xs{width:22px;height:22px}
+ .badge-icon.badge-sm{width:30px;height:30px}
+ .badge-icon.badge-lg,.club-card>.badge-icon{width:40px;height:40px}
+ .match-row .badge-icon{width:30px;height:30px}
+ .small-match .badge-icon{width:22px;height:22px}
+ .badge-team{gap:4px}
+ .teams-small .badge-icon{width:22px;height:22px}
+ .match-row{gap:6px}
+ .badge-table-club{gap:4px}
+}
