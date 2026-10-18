@@ -33,6 +33,9 @@ for(const [division,rows] of Object.entries(data.standings)){
     assert.equal(data.clubs.find(c=>c.id===row.clubId).division,division);
   }
 }
+const compIds=new Set(data.competitions.map(c=>c.id));
+assert.equal(compIds.size,data.competitions.length,"Duplicate competition ids");
+for(const c of data.competitions){assert.ok(["league","cup"].includes(c.kind));assert.ok(["first","second",null].includes(c.division));}
 const matchIds=new Set();
 for(const m of data.matches){
   assert.ok(ids.has(m.homeId),"Unknown home club "+m.homeId);
@@ -40,6 +43,10 @@ for(const m of data.matches){
   assert.notEqual(m.homeId,m.awayId,"Club cannot play itself");
   assert.ok(!matchIds.has(m.id),"Duplicate match id "+m.id);
   matchIds.add(m.id);
+  assert.ok(compIds.has(m.competitionId),"Unknown competition ID for "+m.id);
+  const c=data.competitions.find(c=>c.id===m.competitionId);
+  assert.equal(c.kind,m.competition);
+  assert.equal(c.division,m.division);
   assert.match(m.date,/^\d{4}-\d{2}-\d{2}$/);
   if(m.status==="final"){
     assert.ok(Number.isInteger(m.homeScore)&&Number.isInteger(m.awayScore),"Missing scores");
