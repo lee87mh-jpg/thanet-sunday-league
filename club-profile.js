@@ -87,10 +87,11 @@
     }
     document.title=club.name+" | Thanet Sunday Football League";
     const meta=document.querySelector('meta[name="description"]');
-    if(meta)meta.setAttribute("content",club.name+": fixtures, results, recorded form and 2026/27 league standings (18 October 2026 snapshot).");
+    if(meta)meta.setAttribute("content",club.name+": fixtures, results, recorded form and "+main().season+" league standings (saved "+savedDate(main().snapshotDate)+").");
     byId("profile-title").textContent=club.name;
     byId("profile-breadcrumb").textContent=club.name;
     byId("profile-division").textContent=main().divisionLabels[club.division]||"League club";
+    if(byId("profile-snapshot-date"))byId("profile-snapshot-date").textContent="Saved "+savedDate(main().snapshotDate);
     byId("profile-crest").innerHTML=crest(club);
     byId("profile-stats").innerHTML=renderStats(club);
 
