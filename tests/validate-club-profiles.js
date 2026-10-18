@@ -7,7 +7,7 @@ const vm=require("node:vm");
 const root=path.resolve(__dirname,"..");
 const file=p=>fs.readFileSync(path.join(root,p),"utf8");
 const dataset=file("data/league-data.js");
-const renderer=file("site-v5.js");
+const renderer=file("site-v6.js");
 const profile=file("club-profile.js");
 const html=file("club.html");
 const members=[];
