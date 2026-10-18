@@ -1,0 +1,42 @@
+name: Validate league website data
+
+on:
+  push:
+    paths:
+      - "data/**"
+      - "updates/**"
+      - "scripts/**"
+      - "tests/**"
+      - "site-v8.js"
+      - "club-profile.js"
+      - "match-centre.js"
+      - ".github/workflows/validate-site-data.yml"
+  pull_request:
+    paths:
+      - "data/**"
+      - "updates/**"
+      - "scripts/**"
+      - "tests/**"
+      - "site-v8.js"
+      - "club-profile.js"
+      - "match-centre.js"
+
+permissions:
+  contents: read
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check central club, match and league statistics
+        run: node tests/validate-league-data.js
+      - name: Check all club profiles
+        run: node tests/validate-club-profiles.js
+      - name: Check all match pages
+        run: node tests/validate-match-centre.js
+      - name: Check proposed update importer safety
+        run: node tests/validate-update-workflow.js
