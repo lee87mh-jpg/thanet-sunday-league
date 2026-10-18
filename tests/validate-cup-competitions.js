@@ -11,8 +11,8 @@ const cups=db.competitions.filter(c=>c.kind==="cup");
 assert.equal(new Set(db.competitions.map(c=>c.id)).size,db.competitions.length);
 assert.ok(cups.some(c=>c.id==="first-division-cup"&&c.verification.includes("pending")));
 assert.ok(cups.some(c=>c.id==="second-division-cup"&&c.verification.includes("pending")));
-assert.ok(cups.some(c=>c.id==="kent-sunday-junior-cup"));
-assert.ok(cups.some(c=>c.id==="kent-county-cup-unassigned"));
+assert.ok(cups.some(c=>c.id==="challenge-cup"&&c.verification.includes("pending")));
+assert.ok(cups.some(c=>c.id==="cup-unassigned"&&c.verification==="unknown-cup-tie"));
 const competitionIds=new Set(db.competitions.map(c=>c.id));
 for(const m of db.matches){
  assert.ok(competitionIds.has(m.competitionId),"Unknown competition "+m.id);
@@ -23,12 +23,13 @@ for(const m of db.matches){
 const check=code=>vm.runInContext(code,ctx);
 assert.equal(check('filteredMatches("scheduled","first","league-first","").length'),11);
 assert.equal(check('filteredMatches("scheduled","second","league-second","").length'),0);
-assert.equal(check('filteredMatches("final","all","kent-county-cup-unassigned","").length'),6);
-assert.equal(check('filteredMatches("final","first","kent-county-cup-unassigned","").length'),0);
+assert.equal(check('filteredMatches("final","all","cup-unassigned","").length'),6);
+assert.equal(check('filteredMatches("final","first","cup-unassigned","").length'),0);
 assert.equal(check('filteredMatches("final","first","league-first","").length'),11);
 assert.equal(check('filteredMatches("final","all","first-division-cup","").length'),0);
 assert.equal(check('filteredMatches("scheduled","all","all","afc-manston").length'),2);
-assert.ok(check("selectOptions()").includes("First Division Cup (2026/27 pending)"));
+assert.equal(check('filteredMatches("final","all","cup-all","").length'),6);
+assert.ok(check("selectOptions()").includes("First Division Cup (2026/27 to confirm)"));
 for(const page of ["fixtures.html","results.html","cups.html","cup.html"]){
  const html=read(page);
  assert.ok(html.includes("site-v9.js"),page+" does not load cup-aware site renderer");
@@ -39,4 +40,4 @@ for(const id of ["fixture-division","fixture-competition","fixture-team"])assert
 for(const id of ["results-division","results-competition"])assert.ok(result.includes('id="'+id+'"'),"Missing "+id);
 assert.ok(cupsHTML.includes('id="cup-competitions"'));
 assert.ok(read("cup.html").includes("cup-detail.js"));
-console.log("PASS: central competition registry, county-cup separation, per-division filters, 11 fixtures and 17 results.");
+console.log("PASS: central competition registry, unassigned-cup separation, per-division filters, 11 fixtures and 17 results.");
