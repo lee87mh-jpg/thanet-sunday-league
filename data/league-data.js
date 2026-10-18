@@ -1,5 +1,5 @@
 "use strict";
-/** One saved league dataset. Historical cup names are unconfirmed for 2026/27. No generic cup ties are assigned to a named cup without evidence. */
+/** Dated, non-live central football data. Unverified 2026/27 cup allocations are never inferred. */
 window.TSL_DATA=Object.freeze({
   "schemaVersion": 1,
   "season": "2026/27",
@@ -927,7 +927,7 @@ window.TSL_DATA=Object.freeze({
     },
     {
       "id": "cup-unassigned",
-      "name": "Cup competition not yet identified",
+      "name": "Kent FA County Cups — exact cup to confirm",
       "kind": "cup",
       "type": "cup",
       "division": null,
@@ -935,7 +935,19 @@ window.TSL_DATA=Object.freeze({
       "seasonStatus": "unconfirmed",
       "evidenceSeason": "2026/27",
       "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
-      "notes": "Only generic Cup designation recorded; specific competition remains unverified."
+      "notes": "18 October 2026 ties marked CC (county cup) in FA Full-Time; individual tournament names have not been validated."
+    },
+    {
+      "id": "kent-sunday-junior-cup",
+      "name": "Kent Sunday Junior Cup",
+      "kind": "cup",
+      "type": "cup",
+      "division": null,
+      "seasonStatus": "competition-name-observed",
+      "verification": "confirmed-existence",
+      "evidenceSeason": "2026/27",
+      "sourceUrl": "https://fulltime.thefa.com/index.html?league=391033232",
+      "notes": "FA Full-Time source listing includes this County Cup; individual saved ties not attributed without match-level confirmation."
     }
   ]
 });
