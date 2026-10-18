@@ -14,6 +14,7 @@ Multi-page, mobile-friendly, **GitHub Pages** site for the Martini Airport Trans
 | Results | `results.html` |
 | Cups | `cups.html` |
 | Clubs | `clubs.html` |
+| Individual club profile | `club.html?club=<profileSlug>` |
 | News | `news.html` |
 | About | `about.html` |
 
@@ -28,11 +29,17 @@ The file contains:
 - `matches`: fixtures and results with `homeId`/`awayId` referencing the same club records, not club-name strings.
 - `source` and `snapshotDate`: provenance / freshness.
 
-The page renderer `site-v4.js` reads `window.TSL_DATA`, resolves names and badges, and filters matches for each club through stable IDs. It rebuilds each view on page load; the HTML includes a loading/official-source fallback rather than separate hard-coded football lists. Both scripts are loaded in order with `defer`. No database or paid hosting is needed.
+The page renderer `site-v5.js` reads `window.TSL_DATA`, resolves names and badges, and filters matches for each club through stable IDs. It rebuilds each view on page load; the HTML includes a loading/official-source fallback rather than separate hard-coded football lists. Both scripts are loaded in order with `defer`. No database or paid hosting is needed.
 
-**How to update a club:** change that one `clubs` entry; its name and badge update automatically wherever it appears in tables, fixtures, results and club lists. To add a fixture, insert one match with valid `homeId`/`awayId`. When profiles are built, use `profileSlug` and `matchesForClub(clubId)`.
+## Individual club profiles
 
-**Validation:** run `node tests/validate-league-data.js` after editing the data file. This checks duplicate IDs, references, standings and local badge assets.
+Every listed First/Second Division club has a unique, shareable URL such as [Ramsgate Vale FC](club.html?club=ramsgate-vale-fc) or [Imperial Bar FC](club.html?club=imperial-bar-fc). GitHub Pages serves one lightweight `club.html` template; `club-profile.js` reads the `club` query parameter and loads the appropriate record from `data/league-data.js`. New league clubs can be added without cloning HTML files.
+
+Each profile displays the club badge and division, available league position/points/statistics, scheduled fixtures, recorded results, and league form *only from the recorded results in the snapshot*. Missing home ground/website/Second Division standings are explicitly unconfirmed. Club profiles are linked from the club directory, both league table views and match cards, including home-page previews. External cup opponents do not receive official league profiles.
+
+**How to update a club:** change that one `clubs` entry; its name and badge update automatically wherever it appears in tables, fixtures, results and club lists. To add a fixture, insert one match with valid `homeId`/`awayId`. Profiles already use `profileSlug` and club ID matching; the same match references will support deeper match pages later.
+
+**Validation:** run `node tests/validate-league-data.js` and `node tests/validate-club-profiles.js` after editing the data file. This checks duplicate IDs, references, standings and local badge assets.
 
 ## Source and publishing
 
@@ -45,4 +52,4 @@ The page renderer `site-v4.js` reads `window.TSL_DATA`, resolves names and badge
 
 ## Future work
 
-See [ROADMAP.md](ROADMAP.md) for the saved eight-stage plan. **Individual club profiles are next**, after the central data refactor.
+See [ROADMAP.md](ROADMAP.md) for the saved eight-stage plan. **Club profiles are implemented.** The next planned system is the full match centre. Further profile details await verified club information.
