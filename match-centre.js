@@ -82,9 +82,9 @@
     byId("match-facts").innerHTML=facts(match);
     byId("match-related").innerHTML=relatedMatches(match);
     const meta=document.querySelector('meta[name="description"]');
-    if(meta)meta.setAttribute("content",name(match.homeId)+" v "+name(match.awayId)+": "+kind(match)+" on "+dateText(match.date)+". Dated "+db.snapshotDate+" snapshot.");
+    if(meta)meta.setAttribute("content",name(match.homeId)+" v "+name(match.awayId)+": "+kind(match)+" on "+dateText(match.date)+". Saved source data: "+db.snapshotDate+".");
     document.title=name(match.homeId)+" v "+name(match.awayId)+" | Thanet Sunday Football League";
-    byId("match-alert").textContent="This page uses the 18 October 2026 snapshot. Check FA Full-Time for changes, times or postponed matches.";
+    byId("match-alert").textContent="Saved match information · last updated "+dateText(db.snapshotDate)+". Check FA Full-Time for changes, kick-off times and postponements.";
     byId("match-content").hidden=false;
   }
   document.addEventListener("DOMContentLoaded",start);
