@@ -10,16 +10,16 @@ const COMPETITIONS=LEAGUE.competitions||[];
 const COMP_BY_ID=Object.fromEntries(COMPETITIONS.map(c=>[c.id,c]));
 const MATCH_BY_ID=Object.fromEntries(LEAGUE.matches.map(m=>[m.id,m]));
 function matchCompetition(m){return COMP_BY_ID[m.competitionId]||null;}
-function competitionText(id){const c=COMP_BY_ID[id];return c?c.name:"Competition to confirm";}
+function competitionText(id){const c=COMP_BY_ID[id];return c?c.name:"Competition not verified";}
 function selectOptions(includeAll=true){
- return (includeAll?'<option value="all">All competitions</option>':'')+
+ return (includeAll?'<option value="all">All competitions</option><option value="cup-all">All cup competitions</option>':'')+
  COMPETITIONS.map(c=>'<option value="'+safe(c.id)+'">'+safe(c.name)+(c.verification==="historical-name-pending-2026"?" (2026/27 to confirm)":"")+'</option>').join("");
 }
 function matchDisplay(m){return m.status==="final"?[m.date,clubName(m.homeId),clubName(m.awayId),m.homeScore,m.awayScore,m.competition,m.id]:[m.date,clubName(m.homeId),clubName(m.awayId),m.id];}
 function filteredMatches(status,division,comp,team){
  return LEAGUE.matches.filter(m=>m.status===status &&
  (division==="all"|| (division==="unassigned"?m.division===null:m.division===division)) &&
- (comp==="all"||m.competitionId===comp) &&
+ (comp==="all"||(comp==="cup-all"?m.competition==="cup":m.competitionId===comp)) &&
  (!team||m.homeId===team||m.awayId===team))
  .slice().sort((a,b)=>status==="final"?b.date.localeCompare(a.date):a.date.localeCompare(b.date));
 }
