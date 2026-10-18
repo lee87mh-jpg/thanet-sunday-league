@@ -50,22 +50,30 @@
   }
   function renderForm(id) {
     const games=resultsFor(id,"final").filter(m=>m.competition==="league").slice(0,5);
-    if(!games.length) return empty("No league results are available for this club in the saved snapshot.");
-    const buttons=games.map(m=>{
+    if(!games.length)return empty("No league results are available for this club in the saved snapshot.");
+    const chips=games.map(m=>{
       const own=m.homeId===id?m.homeScore:m.awayScore;
       const other=m.homeId===id?m.awayScore:m.homeScore;
       const tag=own>other?"W":own<other?"L":"D";
       const opponent=name(m.homeId===id?m.awayId:m.homeId);
       const full=tag==="W"?"Win":tag==="L"?"Loss":"Draw";
-      return '<span class="form-chip form-'+tag.toLowerCase()+'" title="'+clean(full+" vs "+opponent)+'" aria-label="'+clean(full+" against "+opponent)+'">'+tag+'</span>';
+      return '<span class="form-chip form-'+tag.toLowerCase()+'" title="'+clean(full+" against "+opponent)+'" aria-label="'+clean(full+" against "+opponent)+'">'+tag+'</span>';
     }).join("");
-    return '<div class="form-row">'+buttons+'</div><p class="form-summary">Most recent recorded league result first · '+games.length+' match'+(games.length===1?"":"es")+' available.</p>';
+    return '<div class="form-row" aria-label="Recent recorded league form">'+chips+'</div>'+
+      '<div class="form-legend" aria-label="Form key"><span><b class="form-key form-w">W</b> Win</span><span><b class="form-key form-d">D</b> Draw</span><span><b class="form-key form-l">L</b> Loss</span></div>'+
+      '<p class="form-summary">Newest recorded result first · '+games.length+' of up to 5 matches available.</p>';
   }
   function renderDetails(club) {
-    const ground=club.homeGround?clean(club.homeGround):"Not yet confirmed";
-    const website=club.website && /^https:\/\//i.test(club.website)?'<a href="'+clean(club.website)+'" target="_blank" rel="noopener noreferrer">Club website ↗</a>':"Not yet supplied";
     const division=main().divisionLabels[club.division]||"Division not confirmed";
-    return '<dl class="club-facts"><div><dt>Division</dt><dd>'+clean(division)+'</dd></div><div><dt>Home ground</dt><dd>'+ground+'</dd></div><div><dt>Website</dt><dd>'+website+'</dd></div></dl>';
+    let rows='<div><dt>Division</dt><dd>'+clean(division)+'</dd></div>';
+    let verified=0;
+    if(club.homeGround){rows+='<div><dt>Home ground</dt><dd>'+clean(club.homeGround)+'</dd></div>';verified++;}
+    if(club.website && /^https:\/\//i.test(club.website)){
+      rows+='<div><dt>Website</dt><dd><a href="'+clean(club.website)+'" target="_blank" rel="noopener noreferrer">Visit club website ↗</a></dd></div>';
+      verified++;
+    }
+    return '<dl class="club-facts">'+rows+'</dl>'+
+      (!verified?'<p class="club-details-pending">Further club details will be shown once they are verified.</p>':'');
   }
   function showClub() {
     const id=new URLSearchParams(window.location.search).get("club");
