@@ -12,6 +12,9 @@ assert.equal(new Set(db.competitions.map(c=>c.id)).size,db.competitions.length);
 assert.ok(cups.some(c=>c.id==="first-division-cup"&&c.verification.includes("pending")));
 assert.ok(cups.some(c=>c.id==="second-division-cup"&&c.verification.includes("pending")));
 assert.ok(cups.some(c=>c.id==="challenge-cup"&&c.verification.includes("pending")));
+assert.ok(cups.some(c=>c.id==="kent-sunday-junior-cup"&&c.verification==="confirmed-existence"));
+assert.ok(cups.some(c=>c.id==="chris-sear-memorial-cup"));
+assert.ok(cups.some(c=>c.id==="chris-sear-memorial-shield"));
 assert.ok(cups.some(c=>c.id==="cup-unassigned"&&c.verification==="unknown-cup-tie"));
 const competitionIds=new Set(db.competitions.map(c=>c.id));
 for(const m of db.matches){
