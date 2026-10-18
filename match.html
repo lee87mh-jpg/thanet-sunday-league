@@ -9,11 +9,38 @@
   <meta property="og:type" content="website">
   <title>Match Centre | Thanet Sunday Football League</title>
   <link rel="icon" type="image/svg+xml" href="./assets/thanet-league-badge.svg">
-  <link rel="stylesheet" href="./styles.css?v=20261018-match-centre-v1">
+  <link rel="stylesheet" href="./styles.css?v=20261018-match-centre-fix-v2">
+  <link rel="stylesheet" href="./match-layout-v2.css?v=20261018-match-centre-fix-v2">
+  <style>
+    /* Critical scoreline layout: remains usable even when a cached shared stylesheet is stale. */
+    #main .match-page-hero{background:#161616;color:#fff;padding-bottom:12px}
+    #main .match-page-hero .breadcrumbs{color:#ddd}
+    #main .match-page-hero .breadcrumbs a{color:#f0f0f0}
+    #main .match-page-scoreboard{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:18px}
+    #main .match-page-club{min-width:0;text-align:center}
+    #main .match-club-link{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;color:#fff;text-decoration:none}
+    #main .match-club-link strong{display:block;font-size:clamp(.88rem,2vw,1.4rem);line-height:1.2;overflow-wrap:anywhere;color:#fff}
+    #main .match-page-crest{display:flex;align-items:center;justify-content:center;width:clamp(78px,10vw,125px);height:clamp(78px,10vw,125px);background:#fff;border-radius:14px;padding:8px;overflow:hidden}
+    #main .match-page-crest img{width:100%;height:100%;max-width:100%;object-fit:contain}
+    #main .match-page-middle{text-align:center;min-width:72px}
+    #main .match-page-score{font-size:clamp(2rem,5vw,4rem);font-weight:900;white-space:nowrap}
+    #main .match-page-meta{color:#ddd;text-align:center}
+    #main .match-page-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    #main .match-facts>div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:15px;padding:12px 0;border-bottom:1px solid #eee}
+    #main .match-facts dd{margin:0}
+    #main .match-page-foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;align-items:center}
+    @media(max-width:850px){#main .match-page-columns{grid-template-columns:1fr}}
+    @media(max-width:590px){
+      #main .match-page-scoreboard{grid-template-columns:minmax(0,1fr) 63px minmax(0,1fr);gap:6px}
+      #main .match-page-crest{width:clamp(62px,21vw,85px);height:clamp(62px,21vw,85px);padding:5px}
+      #main .match-club-link strong{font-size:clamp(.77rem,3.4vw,.95rem)}
+      #main .match-page-score{font-size:clamp(1.65rem,7vw,2.1rem)}
+      #main .match-facts>div{grid-template-columns:90px minmax(0,1fr);gap:9px}
+    }
+  </style>
   <script src="./data/league-data.js?v=20261018-match-centre-v1" defer></script>
-  <script src="./site-v6.js?v=20261018-match-centre-v1" defer></script>
-  <script src="./match-centre.js?v=20261018-match-centre-v1" defer></script>
-  <script src="./club-profile.js?v=20261018-club-profiles-v1" defer></script>
+  <script src="./site-v6.js?v=20261018-match-centre-fix-v2" defer></script>
+  <script src="./match-centre.js?v=20261018-match-centre-fix-v2" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
