@@ -13,12 +13,12 @@ function matchCompetition(m){return COMP_BY_ID[m.competitionId]||null;}
 function competitionText(id){const c=COMP_BY_ID[id];return c?c.name:"Competition to confirm";}
 function selectOptions(includeAll=true){
  return (includeAll?'<option value="all">All competitions</option>':'')+
- COMPETITIONS.map(c=>'<option value="'+safe(c.id)+'">'+safe(c.name)+(c.verification==="historical-name-pending-2026"?" (2026/27 pending)":"")+'</option>').join("");
+ COMPETITIONS.map(c=>'<option value="'+safe(c.id)+'">'+safe(c.name)+(c.verification==="historical-name-pending-2026"?" (2026/27 to confirm)":"")+'</option>').join("");
 }
 function matchDisplay(m){return m.status==="final"?[m.date,clubName(m.homeId),clubName(m.awayId),m.homeScore,m.awayScore,m.competition,m.id]:[m.date,clubName(m.homeId),clubName(m.awayId),m.id];}
 function filteredMatches(status,division,comp,team){
  return LEAGUE.matches.filter(m=>m.status===status &&
- (division==="all"||m.division===division) &&
+ (division==="all"|| (division==="unassigned"?m.division===null:m.division===division)) &&
  (comp==="all"||m.competitionId===comp) &&
  (!team||m.homeId===team||m.awayId===team))
  .slice().sort((a,b)=>status==="final"?b.date.localeCompare(a.date):a.date.localeCompare(b.date));
@@ -107,7 +107,7 @@ function renderCups(){
  root.innerHTML=cups.map(c=>{
   const count=LEAGUE.matches.filter(m=>m.competitionId===c.id).length;
   const pending=c.verification==="historical-name-pending-2026";
-  const sub=pending?"Historical name — 2026/27 details awaiting confirmation":c.verification==="confirmed-existence"?"County competition confirmed; no individual ties verified yet":"County cup ties awaiting precise cup identification";
+  const sub=pending?"Historical cup name — 2026/27 status not confirmed":c.verification==="unknown-cup-tie"?"Recorded cup results awaiting identification":"Competition details pending verification";
   return '<a class="cup-tile" href="./cup.html?competition='+encodeURIComponent(c.id)+'"><span class="cup-tile-top">KNOCKOUT FOOTBALL <span aria-hidden="true">↗</span></span><h3>'+safe(c.name)+'</h3><p>'+safe(sub)+'</p><span class="cup-tile-bottom">'+count+' match record'+(count===1?"":"s")+'</span></a>';
  }).join("");
  if(el("cup-results"))el("cup-results").innerHTML=LEAGUE.matches.filter(m=>m.competition==="cup"&&m.status==="final").slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,6).map(m=>resultMini(matchDisplay(m))).join("")||'<p class="empty">No saved cup results yet.</p>';
