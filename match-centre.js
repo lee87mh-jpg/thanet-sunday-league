@@ -64,7 +64,7 @@
     byId("match-away").innerHTML=detailsLink(away);
     byId("match-score").textContent=final?match.homeScore+" – "+match.awayScore:"VS";
     byId("match-status").textContent=final?"Final score · recorded snapshot":"Scheduled in the saved fixture list";
-    byId("match-date-summary").textContent=dateText(match.date)+(match.kickoff?" · "+match.kickoff:" · Kick-off TBC");
+    byId("match-date-summary").textContent=dateText(match.date)+(match.kickoff?" · "+match.kickoff:(final?" · Final result":" · Kick-off to be confirmed"));
     byId("match-back-crumb").href=back;
     byId("match-back-crumb").textContent=final?"Results":"Fixtures";
     byId("match-return").href=back;
