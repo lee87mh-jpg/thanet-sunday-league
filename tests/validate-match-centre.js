@@ -9,6 +9,13 @@ const read=p=>fs.readFileSync(path.join(root,p),"utf8");
 const data=read("data/league-data.js"),renderer=read("site-v6.js"),matchScript=read("match-centre.js"),html=read("match.html");
 const sb={window:{}};
 vm.runInNewContext(data,sb);
+const styles=read("match-layout-v2.css");
+assert.ok(html.includes("match-layout-v2.css"),"Dedicated stylesheet missing");
+assert.ok(!html.includes("club-profile.js"),"Unneeded club profile script present");
+assert.ok(html.includes("Critical scoreline layout"),"Responsive fallback missing");
+assert.ok(styles.includes(".match-page-scoreboard"),"Scoreboard rules missing");
+assert.ok(styles.includes("grid-template-columns:minmax(0,1fr) 63px minmax(0,1fr)"),"Mobile columns missing");
+assert.ok(styles.includes("object-fit:contain!important"),"Image fit missing");
 const matches=sb.window.TSL_DATA.matches;
 const required=["match-title","match-alert","match-home","match-away","match-score","match-content","match-facts","match-related"];
 for(const m of matches){
