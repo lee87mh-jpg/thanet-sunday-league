@@ -7,7 +7,7 @@ on:
       - "updates/**"
       - "scripts/**"
       - "tests/**"
-      - "site-v8.js"
+      - "site-v9.js"
       - "club-profile.js"
       - "match-centre.js"
       - ".github/workflows/validate-site-data.yml"
@@ -17,7 +17,7 @@ on:
       - "updates/**"
       - "scripts/**"
       - "tests/**"
-      - "site-v8.js"
+      - "site-v9.js"
       - "club-profile.js"
       - "match-centre.js"
 
@@ -39,4 +39,6 @@ jobs:
       - name: Check all match pages
         run: node tests/validate-match-centre.js
       - name: Check proposed update importer safety
-        run: node tests/validate-update-workflow.js
+        run: |
+          node tests/validate-update-workflow.js
+          node tests/validate-cup-competitions.js
