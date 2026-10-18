@@ -95,27 +95,72 @@ function renderTable(division){
   el("table-note").textContent=division==="first"?"League table snapshot verified on 18 October 2026. Positions and points may have changed.":"Second Division statistics are not included until the league provides a verified official feed.";
 }
 document.addEventListener("DOMContentLoaded",()=>{
-  el("year").textContent=new Date().getFullYear();
-  el("overview-table").innerHTML=tableHTML(SNAPSHOT.table,6);
-  el("overview-results").innerHTML=SNAPSHOT.results.slice(0,5).map(resultMini).join("");
-  el("cup-results").innerHTML=SNAPSHOT.results.filter(x=>x[5]==="cup").slice(0,5).map(resultMini).join("");
-  const near=SNAPSHOT.fixtures.slice(0,3);
-  el("hero-fixture-date").textContent=prettyDate(SNAPSHOT.fixtures[0][0],"full").toUpperCase();
-  el("hero-fixtures").innerHTML=near.map(x=>'<div class="small-match"><span class="team">'+safe(x[1])+'</span><span class="vs">VS</span><span class="team">'+safe(x[2])+'</span></div>').join("");
-  const teams=Array.from(new Set(SNAPSHOT.fixtures.flatMap(x=>[x[1],x[2]]))).sort();
-  el("fixture-team").innerHTML='<option value="">All clubs</option>'+teams.map(x=>'<option value="'+safe(x)+'">'+safe(x)+'</option>').join("");
-  el("fixture-team").addEventListener("change",renderFixtures);
-  el("results-competition").addEventListener("change",renderResults);
-  renderTable("first");renderClubs("first");renderFixtures();renderResults();
-  document.querySelectorAll("[data-division]").forEach(btn=>btn.addEventListener("click",()=>{
-    document.querySelectorAll("[data-division]").forEach(x=>{x.classList.toggle("active",x===btn);x.setAttribute("aria-pressed",x===btn?"true":"false");});
-    renderTable(btn.dataset.division);
-  }));
-  document.querySelectorAll("[data-clubs]").forEach(btn=>btn.addEventListener("click",()=>{
-    document.querySelectorAll("[data-clubs]").forEach(x=>{x.classList.toggle("active",x===btn);x.setAttribute("aria-pressed",x===btn?"true":"false");});
-    renderClubs(btn.dataset.clubs);
-  }));
+  const year = el("year");
+  if(year) year.textContent = new Date().getFullYear();
+
+  // Each real page loads only its own widgets. Never assume the other pages' IDs exist.
+  const overviewTable = el("overview-table");
+  const overviewResults = el("overview-results");
+  const cupResults = el("cup-results");
+  if(overviewTable) overviewTable.innerHTML = tableHTML(SNAPSHOT.table,6);
+  if(overviewResults) overviewResults.innerHTML = SNAPSHOT.results.slice(0,5).map(resultMini).join("");
+  if(cupResults) cupResults.innerHTML = SNAPSHOT.results.filter(x=>x[5]==="cup").slice(0,5).map(resultMini).join("");
+
+  const heroDate = el("hero-fixture-date"), heroFixtures = el("hero-fixtures");
+  if(heroDate && heroFixtures && SNAPSHOT.fixtures.length){
+    const near=SNAPSHOT.fixtures.slice(0,3);
+    heroDate.textContent=prettyDate(near[0][0],"full").toUpperCase();
+    heroFixtures.innerHTML=near.map(x=>'<div class="small-match"><span class="team">'+safe(x[1])+'</span><span class="vs">VS</span><span class="team">'+safe(x[2])+'</span></div>').join("");
+  }
+
+  const fixtureTeam = el("fixture-team");
+  if(fixtureTeam && el("fixtures-list")){
+    const teams=Array.from(new Set(SNAPSHOT.fixtures.flatMap(x=>[x[1],x[2]]))).sort();
+    fixtureTeam.innerHTML='<option value="">All clubs</option>'+teams.map(x=>'<option value="'+safe(x)+'">'+safe(x)+'</option>').join("");
+    fixtureTeam.addEventListener("change",renderFixtures);
+    renderFixtures();
+  }
+
+  const resultSelect=el("results-competition");
+  if(resultSelect && el("results-list")){
+    resultSelect.addEventListener("change",renderResults);
+    renderResults();
+  }
+
+  if(el("full-table")){
+    renderTable("first");
+    document.querySelectorAll("[data-division]").forEach(btn=>btn.addEventListener("click",()=>{
+      document.querySelectorAll("[data-division]").forEach(x=>{
+        x.classList.toggle("active",x===btn);
+        x.setAttribute("aria-pressed",x===btn?"true":"false");
+      });
+      renderTable(btn.dataset.division);
+    }));
+  }
+
+  if(el("clubs-grid")){
+    renderClubs("first");
+    document.querySelectorAll("[data-clubs]").forEach(btn=>btn.addEventListener("click",()=>{
+      document.querySelectorAll("[data-clubs]").forEach(x=>{
+        x.classList.toggle("active",x===btn);
+        x.setAttribute("aria-pressed",x===btn?"true":"false");
+      });
+      renderClubs(btn.dataset.clubs);
+    }));
+  }
+
   const btn=el("menu-button"),nav=el("main-nav");
-  btn.addEventListener("click",()=>{const open=btn.getAttribute("aria-expanded")!=="true";btn.setAttribute("aria-expanded",String(open));nav.classList.toggle("open",open);});
-  nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");btn.setAttribute("aria-expanded","false");}));
+  if(btn && nav){
+    const closeMenu=()=>{
+      nav.classList.remove("open");
+      btn.setAttribute("aria-expanded","false");
+    };
+    btn.addEventListener("click",()=>{
+      const open=btn.getAttribute("aria-expanded")!=="true";
+      btn.setAttribute("aria-expanded",String(open));
+      nav.classList.toggle("open",open);
+    });
+    nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
+    document.addEventListener("keydown",event=>{if(event.key==="Escape")closeMenu();});
+  }
 });
