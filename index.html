@@ -3,181 +3,102 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#161616">
-  <meta name="description" content="Thanet Sunday Football League — fixtures, results, league tables, cup competitions and league news. Sponsored by Martini Airport Transfers.">
-  <meta property="og:title" content="Thanet Sunday League | 2026/27">
-  <meta property="og:description" content="Sunday football across Thanet. Tables, fixtures, results and club news.">
+  <meta name="theme-color" content="#141414">
+  <meta name="description" content="Thanet Sunday Football League: league tables, match fixtures, results, cup competitions, teams and news. Sponsored by Martini Airport Transfers.">
+  <meta property="og:title" content="Thanet Sunday Football League — 2026/27">
   <meta property="og:type" content="website">
-  <title>Thanet Sunday League | Fixtures, Results & Tables</title>
+  <title>Thanet Sunday Football League | 2026/27</title>
   <link rel="icon" type="image/svg+xml" href="./assets/thanet-league-badge.svg">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=20261018-typography-fix">
   <script src="./app.js" defer></script>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
-  <div class="utility"><div class="container utility-content">
-    <span>LOCAL FOOTBALL. EVERY SUNDAY.</span>
-    <span>2026/27 SEASON</span>
-  </div></div>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Thanet Sunday League — home">
-        <img src="./assets/thanet-league-badge.svg" alt="Thanet Sunday League badge" width="55" height="68">
-        <span class="brand-label"><strong>THANET</strong><span>SUNDAY LEAGUE</span></span>
-      </a>
-      <nav id="main-nav" class="nav" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#tables">Tables</a>
-        <a href="#fixtures">Fixtures</a>
-        <a href="#results">Results</a>
-        <a href="#cups">Cups</a>
-        <a href="#clubs">Clubs</a>
-        <a href="#news">News</a>
-        <a href="#about">About</a>
-      </nav>
-      <a class="header-external" href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">FA Full-Time <span aria-hidden="true">↗</span></a>
-      <button id="menu-button" class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="topline"><div class="shell topinner"><span><span class="live-dot" aria-hidden="true"></span> LOCAL FOOTBALL. EVERY SUNDAY.</span><span class="top-location">MARGATE · RAMSGATE · BROADSTAIRS · THANET</span></div></div>
+<header class="header">
+  <div class="shell nav-shell">
+    <a class="logo" href="#home" aria-label="Thanet Sunday Football League home">
+      <img class="league-crest" src="./assets/thanet-league-badge.svg" alt="Thanet Sunday League crest" width="60" height="74">
+      <span class="logo-copy"><strong>THANET <i>SUNDAY</i></strong><small>FOOTBALL LEAGUE</small></span>
+    </a>
+    <button class="menu-button" type="button" id="menu-button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <nav id="main-nav" class="nav" aria-label="Main menu">
+      <a href="#home">Home</a><a href="#tables">Tables</a><a href="#fixtures">Fixtures</a><a href="#results">Results</a><a href="#cups">Cups</a><a href="#clubs">Clubs</a><a href="#news">News</a><a href="#about">About</a>
+    </nav>
+    <a class="official-top" href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">FA Full-Time <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<main id="main">
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="shell hero-layout">
+    <div class="hero-left"><div class="hero-crest-row"><img src="./assets/thanet-league-badge.svg" alt="Thanet Sunday League badge" width="104" height="129"><span>THANET SUNDAY LEAGUE<br><small>THE HOME OF LOCAL FOOTBALL</small></span></div>
+      <p class="eyebrow light">EST. 2005 <span class="dash"></span> SEASON 2026/27</p>
+      <h1 id="hero-title">THE HOME OF <span>SUNDAY</span> <span class="football-word">FOOTBALL<span class="hero-fullstop">.</span></span></h1>
+      <p class="hero-sub">A league built on local pride. Fixtures, results, tables and all the stories of Sunday football across Thanet.</p>
+      <div class="hero-buttons"><a class="button lime" href="#fixtures">Explore fixtures <span aria-hidden="true">↗</span></a><a class="button ghost" href="#tables">League tables <span aria-hidden="true">→</span></a></div>
+      <div class="hero-numbers"><div><strong>2026<span>/27</span></strong><small>CURRENT SEASON</small></div><div><strong>2</strong><small>DIVISIONS</small></div><div><strong>EST. 2005</strong><small>LEAGUE HISTORY</small></div></div>
     </div>
-  </header>
+    <div class="weekend-card" aria-label="Upcoming matchday preview">
+      <div class="weekend-label"><span><span class="status-dot"></span> NEXT MATCHDAY</span><span>THE WEEK AHEAD</span></div>
+      <div class="weekend-body"><p class="overline" id="hero-fixture-date">UPCOMING LEAGUE FIXTURES</p><div id="hero-fixtures"><p class="muted">Loading fixtures…</p></div><div class="card-bottom"><span>Times & venues: confirm with the FA</span><a href="#fixtures">All fixtures <span aria-hidden="true">→</span></a></div></div>
+    </div>
+  </div>
+  <div class="hero-rings" aria-hidden="true"></div>
+</section>
+<div class="sponsor-ribbon"><div class="shell sponsor-ribbon-inner"><span class="sponsor-kicker">PROUDLY SUPPORTED BY</span><a href="https://www.martiniairporttransfers.co.uk/" target="_blank" rel="noopener noreferrer" class="sponsor-name">MARTINI <span>AIRPORT TRANSFERS</span> <b aria-hidden="true">↗</b></a><span class="sponsor-note">LEAGUE TITLE SPONSOR</span></div></div>
 
-  <main id="main">
-    <section id="home" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <p class="kicker"><span class="kicker-line"></span> THE HOME OF LOCAL FOOTBALL</p>
-          <h1>Sunday football.<br><span>Made in Thanet.</span></h1>
-          <p class="hero-description">The fixtures, the results, the rivalries. Everything you need to follow Sunday league football across Thanet.</p>
-          <div class="hero-actions">
-            <a class="button button-dark" href="#fixtures">View fixtures <span aria-hidden="true">↗</span></a>
-            <a class="button button-outline" href="#tables">League tables <span aria-hidden="true">→</span></a>
-          </div>
-          <p class="sponsor-credit">Proudly sponsored by <strong>Martini Airport Transfers</strong></p>
-        </div>
-        <aside class="weekend" aria-label="Next matchday preview">
-          <div class="weekend-heading"><span><span class="dot"></span> MATCHDAY PREVIEW</span><span class="weekend-season">2026/27</span></div>
-          <div class="weekend-content">
-            <div class="weekend-top">
-              <p class="kicker">NEXT LISTED FIXTURES</p>
-              <h2 id="hero-fixture-date">Upcoming fixtures</h2>
-            </div>
-            <div id="hero-fixtures"><p>Loading fixtures…</p></div>
-            <a class="weekend-bottom" href="#fixtures"><span>View all fixtures</span><span aria-hidden="true">↗</span></a>
-          </div>
-        </aside>
-      </div>
-    </section>
+<section class="section" id="overview" aria-labelledby="overview-title"><div class="shell">
+  <div class="section-heading"><div><p class="eyebrow">MATCH CENTRE</p><h2 id="overview-title">Your Sunday roundup.</h2><p>Scores and standings at a glance, from our dated FA Full-Time snapshot.</p></div><a class="text-link" href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">Check official updates ↗</a></div>
+  <div class="overview-grid">
+    <div class="panel"><div class="panel-head"><h3>First Division standings</h3><span class="tag">18 OCT SNAPSHOT</span></div><div id="overview-table" class="table-wrap"></div><div class="panel-foot"><span>Source: FA Full-Time</span><a href="#tables">Full table →</a></div></div>
+    <div class="panel"><div class="panel-head"><h3>Recent results</h3><span class="tag">LATEST LISTED</span></div><div id="overview-results"></div><div class="panel-foot"><span>Final scores, as listed</span><a href="#results">All results →</a></div></div>
+  </div>
+</div></section>
 
-    <div class="snapshot-strip"><div class="container snapshot-content">
-      <span><strong>2026/27</strong> Season snapshot</span>
-      <span>Data checked 18 October 2026 · Not live</span>
-      <a href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">Official updates ↗</a>
-    </div></div>
+<section class="section section-tinted" id="tables" aria-labelledby="tables-title"><div class="shell">
+  <div class="section-heading"><div><p class="eyebrow">THE STANDINGS</p><h2 id="tables-title">League tables.</h2><p>2026/27 standings, with goal difference and points.</p></div><a class="text-link" href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">Full-Time official tables ↗</a></div>
+  <div class="tabs" role="group" aria-label="Choose a division"><button class="tab active" type="button" data-division="first" aria-pressed="true">First Division</button><button class="tab" type="button" data-division="second" aria-pressed="false">Second Division</button></div>
+  <div class="panel"><div class="panel-head"><h3 id="division-heading">First Division</h3><span class="tag">SEASON 2026/27</span></div><div id="full-table" class="table-wrap"></div><div class="panel-foot" id="table-note">League table snapshot, verified 18 October 2026. Rankings may change.</div></div>
+  <p class="data-note"><strong>Important:</strong> These are not live league tables. The official FA Full-Time page is the source of truth. Automatic updates can be connected when league administrators supply their permitted feed codes.</p>
+</div></section>
 
-    <section class="section quick-section" aria-label="Explore the league">
-      <div class="container quick-links">
-        <a class="quick-link" href="#tables"><span class="quick-number">01 / STANDINGS</span><strong>League tables</strong><span class="quick-arrow">↗</span></a>
-        <a class="quick-link" href="#fixtures"><span class="quick-number">02 / MATCHDAYS</span><strong>Fixtures</strong><span class="quick-arrow">↗</span></a>
-        <a class="quick-link" href="#results"><span class="quick-number">03 / FINAL SCORES</span><strong>Results</strong><span class="quick-arrow">↗</span></a>
-      </div>
-    </section>
+<section class="section" id="fixtures" aria-labelledby="fixtures-title"><div class="shell">
+  <div class="section-heading"><div><p class="eyebrow">COMING UP</p><h2 id="fixtures-title">Upcoming fixtures.</h2><p>Plan your next Sunday by finding the teams playing near you.</p></div><a class="text-link" href="https://fulltime.thefa.com/fixtures.html?league=391033232" target="_blank" rel="noopener noreferrer">Official fixture list ↗</a></div>
+  <div class="filter-row"><label for="fixture-team">Filter by club</label><select id="fixture-team"><option value="">All clubs</option></select><span class="filter-hint">Dates can change — confirm kick-off time and venue on FA Full-Time.</span></div>
+  <div id="fixtures-list" class="match-grid" aria-live="polite"></div>
+</div></section>
 
-    <section id="overview" class="section overview-section">
-      <div class="container">
-        <div class="section-heading">
-          <div><p class="kicker">THE LATEST</p><h2>This week's football<span class="period">.</span></h2><p>League standings and recent scores at a glance.</p></div>
-          <a class="subtle-link" href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">See official updates ↗</a>
-        </div>
-        <div class="overview-grid">
-          <div class="panel">
-            <div class="panel-header"><h3>First Division</h3><span class="small-label">18 OCT SNAPSHOT</span></div>
-            <div id="overview-table" class="table-scroll"></div>
-            <div class="panel-footer"><span>Standings as recorded</span><a href="#tables">Full table ↗</a></div>
-          </div>
-          <div class="panel">
-            <div class="panel-header"><h3>Recent results</h3><span class="small-label">LATEST LISTED</span></div>
-            <div id="overview-results"></div>
-            <div class="panel-footer"><span>Final scores</span><a href="#results">All results ↗</a></div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="section section-tinted" id="results" aria-labelledby="results-title"><div class="shell">
+  <div class="section-heading"><div><p class="eyebrow">FINAL WHISTLE</p><h2 id="results-title">Latest results.</h2><p>Recent league results and cup ties from the official fixture record.</p></div><a class="text-link" href="https://fulltime.thefa.com/results.html?league=391033232" target="_blank" rel="noopener noreferrer">Official results ↗</a></div>
+  <div class="filter-row"><label for="results-competition">Competition</label><select id="results-competition"><option value="all">All matches</option><option value="league">League</option><option value="cup">Cup matches</option></select></div>
+  <div id="results-list" class="match-grid" aria-live="polite"></div>
+</div></section>
 
-    <section id="tables" class="section section-alt">
-      <div class="container">
-        <div class="section-heading"><div><p class="kicker">THE STANDINGS</p><h2>League tables<span class="period">.</span></h2><p>Track how your club is performing this season.</p></div><a class="subtle-link" href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">Official tables ↗</a></div>
-        <div class="tabs" role="group" aria-label="Select division">
-          <button class="tab active" type="button" data-division="first" aria-pressed="true">First Division</button>
-          <button class="tab" type="button" data-division="second" aria-pressed="false">Second Division</button>
-        </div>
-        <div class="panel">
-          <div class="panel-header"><h3 id="division-heading">First Division</h3><span class="small-label">2026/27</span></div>
-          <div id="full-table" class="table-scroll"></div>
-          <div class="panel-footer" id="table-note">Data snapshot checked 18 October 2026.</div>
-        </div>
-        <p class="notice">Standings are a dated snapshot, not live. Official FA Full-Time data takes precedence. The Second Division table will be added once a verified feed is available.</p>
-      </div>
-    </section>
+<section class="section" id="cups" aria-labelledby="cups-title"><div class="shell">
+  <div class="section-heading"><div><p class="eyebrow">KNOCKOUT FOOTBALL</p><h2 id="cups-title">Cup competitions.</h2><p>Where the next big cup story can begin on any Sunday.</p></div></div>
+  <div class="cup-grid">
+    <div class="cup-feature"><span class="cup-symbol" aria-hidden="true">★</span><p class="eyebrow light">SEASON 2026/27</p><h3>The road to the final.</h3><p>Find official cup fixtures, draws, results and confirmed competition names in the FA Full-Time competition selector.</p><a class="button lime" href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">View official cup competitions ↗</a></div>
+    <div class="panel cup-results"><div class="panel-head"><h3>Recent cup results</h3><span class="tag">18 OCT</span></div><div id="cup-results"></div><div class="panel-foot"><span>Knockout results snapshot</span><a href="#results">View results →</a></div></div>
+  </div>
+</div></section>
 
-    <section id="fixtures" class="section">
-      <div class="container">
-        <div class="section-heading"><div><p class="kicker">COMING UP</p><h2>Upcoming fixtures<span class="period">.</span></h2><p>See who's playing and when, from the latest saved schedule.</p></div><a class="subtle-link" href="https://fulltime.thefa.com/fixtures.html?league=391033232" target="_blank" rel="noopener noreferrer">Official fixtures ↗</a></div>
-        <div class="filters"><label for="fixture-team">Find a club</label><select id="fixture-team"><option value="">All clubs</option></select><span>Times and venues may change. Check FA Full-Time.</span></div>
-        <div id="fixtures-list" class="matches" aria-live="polite"></div>
-      </div>
-    </section>
+<section class="section section-tinted" id="clubs" aria-labelledby="clubs-title"><div class="shell">
+  <div class="section-heading"><div><p class="eyebrow">THE HEART OF THE LEAGUE</p><h2 id="clubs-title">Our clubs.</h2><p>Discover the teams making Sunday football happen across Thanet.</p></div></div>
+  <div class="tabs" role="group" aria-label="Club division filter"><button class="tab active" data-clubs="first" type="button" aria-pressed="true">First Division</button><button class="tab" data-clubs="second" type="button" aria-pressed="false">Second Division</button></div>
+  <div id="clubs-grid" class="clubs-grid"></div><p class="data-note">Club listings are an October 2026 snapshot, subject to league confirmation and changes.</p>
+</div></section>
 
-    <section id="results" class="section section-alt">
-      <div class="container">
-        <div class="section-heading"><div><p class="kicker">FINAL WHISTLE</p><h2>Latest results<span class="period">.</span></h2><p>Catch up with league matches and cup ties.</p></div><a class="subtle-link" href="https://fulltime.thefa.com/results.html?league=391033232" target="_blank" rel="noopener noreferrer">Official results ↗</a></div>
-        <div class="filters"><label for="results-competition">Competition</label><select id="results-competition"><option value="all">All matches</option><option value="league">League</option><option value="cup">Cup matches</option></select></div>
-        <div id="results-list" class="matches" aria-live="polite"></div>
-      </div>
-    </section>
+<section class="section" id="news" aria-labelledby="news-title"><div class="shell">
+  <div class="section-heading"><div><p class="eyebrow">FROM AROUND THE LEAGUE</p><h2 id="news-title">League news.</h2><p>Updates, announcements and matchday stories.</p></div><a class="text-link" href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">More official news ↗</a></div>
+  <div class="news-grid">
+    <article class="news-card"><div class="news-visual"><span>WEEK FOUR<br>ROUNDUP</span><b>04</b></div><div class="news-body"><small>15 OCTOBER 2026 · LEAGUE NEWS</small><h3>The season begins to take shape.</h3><p>Read the league’s official week four summary as the new season gathers pace.</p><a href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">Read on FA Full-Time ↗</a></div></article>
+    <article class="news-card"><div class="news-visual secondary"><span>SEASON<br>2026/27</span><b>26</b></div><div class="news-body"><small>10 SEPTEMBER 2026 · LEAGUE INFO</small><h3>Rules and officials for the new season.</h3><p>Access the latest league rules, official contacts and season documents.</p><a href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">Read on FA Full-Time ↗</a></div></article>
+    <article class="news-card"><div class="news-visual dark"><span>PROUDLY<br>SPONSORED</span><b>★</b></div><div class="news-body"><small>3 JULY 2025 · SPONSORSHIP</small><h3>Martini Airport Transfers supports the league.</h3><p>Celebrating the partnership helping keep local Sunday football in the spotlight.</p><a href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">Read on FA Full-Time ↗</a></div></article>
+  </div>
+</div></section>
 
-    <section id="cups" class="section">
-      <div class="container">
-        <div class="section-heading"><div><p class="kicker">KNOCKOUT FOOTBALL</p><h2>Cup competitions<span class="period">.</span></h2><p>All to play for when it's win or go home.</p></div></div>
-        <div class="cup-layout">
-          <div class="cup-promo"><p class="kicker">THE ROAD TO THE FINAL</p><h3>Every cup run starts somewhere.</h3><p>Competition draws, cup fixtures and official knockout information will be available through the league's confirmed FA Full-Time records.</p><a class="button button-light" href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">View cup competitions ↗</a></div>
-          <div class="panel"><div class="panel-header"><h3>Recent cup scores</h3><span class="small-label">18 OCT SNAPSHOT</span></div><div id="cup-results"></div><div class="panel-footer"><span>From FA Full-Time</span><a href="#results">All results ↗</a></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="clubs" class="section section-alt">
-      <div class="container">
-        <div class="section-heading"><div><p class="kicker">OUR FOOTBALL COMMUNITY</p><h2>Meet the clubs<span class="period">.</span></h2><p>The teams that make Sunday football what it is.</p></div></div>
-        <div class="tabs" role="group" aria-label="Select club division">
-          <button class="tab active" type="button" data-clubs="first" aria-pressed="true">First Division</button>
-          <button class="tab" type="button" data-clubs="second" aria-pressed="false">Second Division</button>
-        </div>
-        <div id="clubs-grid" class="club-grid"></div>
-        <p class="notice">Club listings are based on the saved October 2026 snapshot and may change.</p>
-      </div>
-    </section>
-
-    <section id="news" class="section">
-      <div class="container">
-        <div class="section-heading"><div><p class="kicker">AROUND THE LEAGUE</p><h2>League news<span class="period">.</span></h2><p>Updates, announcements and stories from local football.</p></div></div>
-        <div class="news-grid">
-          <article class="news-card"><div class="news-illustration"><span class="news-number">01</span><span>LEAGUE UPDATE</span></div><div class="news-content"><small>15 OCTOBER 2026</small><h3>The season starts to take shape</h3><p>Catch up with the league's official week-four roundup.</p><a href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">On FA Full-Time ↗</a></div></article>
-          <article class="news-card"><div class="news-illustration light"><span class="news-number">02</span><span>SEASON INFORMATION</span></div><div class="news-content"><small>10 SEPTEMBER 2026</small><h3>Information for the 2026/27 season</h3><p>Rules, contacts and further details for the league season.</p><a href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">On FA Full-Time ↗</a></div></article>
-          <article class="news-card"><div class="news-illustration mid"><span class="news-number">03</span><span>LEAGUE SPONSOR</span></div><div class="news-content"><small>3 JULY 2025</small><h3>Martini Airport Transfers backs the league</h3><p>Recognising the title sponsorship supporting local football.</p><a href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">On FA Full-Time ↗</a></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="sponsor-section">
-      <div class="container sponsor-layout">
-        <div><p class="kicker">PROUDLY SUPPORTED BY</p><h2>Keeping local football moving<span class="period">.</span></h2><p>Martini Airport Transfers is the Thanet Sunday League's title sponsor. This website prototype brings supporters, players and clubs closer to the action.</p></div>
-        <div class="sponsor-details"><span>LEAGUE TITLE SPONSOR</span><strong>MARTINI</strong><small>AIRPORT TRANSFERS</small><a href="https://www.martiniairporttransfers.co.uk/" target="_blank" rel="noopener noreferrer">Visit sponsor ↗</a></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer"><div class="container footer-content"><div><strong>THANET SUNDAY LEAGUE</strong><p>Sunday football. Made in Thanet.</p><small>Website prototype pending league approval.</small></div><div><a href="#tables">Tables</a><a href="#fixtures">Fixtures</a><a href="#results">Results</a><a href="#clubs">Clubs</a><a href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">FA Full-Time ↗</a></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> Thanet Sunday League website concept.</span><span>Data snapshot: 18 October 2026</span></div></footer>
+<section class="section about-section" id="about" aria-labelledby="about-title"><div class="shell about-grid"><div><p class="eyebrow light">MORE THAN A GAME</p><h2 id="about-title">A league built on <span>local pride.</span></h2><p>From long-standing rivalries to new clubs finding their feet, Sunday football is part of Thanet's sporting community. This independent website prototype brings the information together in one easy place.</p><a class="button lime" href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">Visit the league on FA Full-Time ↗</a></div><div class="about-side"><span class="large-ball" aria-hidden="true">⚽</span><h3>Sponsors & community partners</h3><p>Martini Airport Transfers is the league's title sponsor. Space is reserved for further league-approved sponsors and supporters.</p><a href="https://www.martiniairporttransfers.co.uk/" target="_blank" rel="noopener noreferrer">Martini Airport Transfers ↗</a></div></div></section>
+</main>
+<footer class="footer"><div class="shell footer-grid"><div><div class="footer-logo"><img src="./assets/thanet-league-badge.svg" alt="Thanet Sunday League badge" width="66" height="82"><strong>THANET <span>SUNDAY</span></strong></div><p>Sunday league football across Thanet.</p></div><div><h3>EXPLORE</h3><a href="#tables">Tables</a><a href="#fixtures">Fixtures</a><a href="#results">Results</a><a href="#cups">Cups</a></div><div><h3>COMMUNITY</h3><a href="#clubs">Clubs</a><a href="#news">News</a><a href="#about">About</a><a href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">Contact league officials ↗</a></div><div><h3>LEAGUE SPONSOR</h3><a class="footer-sponsor" href="https://www.martiniairporttransfers.co.uk/" target="_blank" rel="noopener noreferrer">MARTINI<br><span>AIRPORT TRANSFERS ↗</span></a></div></div><div class="shell footer-bottom"><span>© <span id="year">2026</span> Thanet Sunday Football League website prototype. Not yet an authorised official league website.</span><span>Data snapshots: 18 October 2026 · <a href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">FA Full-Time ↗</a></span></div></footer>
 </body>
 </html>
