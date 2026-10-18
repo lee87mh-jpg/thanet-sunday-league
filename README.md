@@ -13,6 +13,7 @@ Multi-page, mobile-friendly, **GitHub Pages** site for the Martini Airport Trans
 | Fixtures | `fixtures.html` |
 | Results | `results.html` |
 | Cups | `cups.html` |
+| Individual cup | `cup.html?competition=<competitionId>` |
 | Clubs | `clubs.html` |
 | Individual club profile | `club.html?club=<profileSlug>` |
 | Match centre | `match.html?match=<matchId>` |
@@ -27,16 +28,26 @@ The file contains:
 
 - `clubs`: one record per club (stable `id`, `name`, `division`, `badge`, reserved `profileSlug` and unfilled profile details).
 - `standings.first` and `standings.second`: club IDs and league statistics. Second Division data is intentionally empty until confirmed.
-- `matches`: fixtures and results with `homeId`/`awayId` referencing the same club records, not club-name strings.
+- `matches`: fixtures and results with `homeId`/`awayId` and a stable `competitionId` referencing central club and competition records.
+- `competitions`: First and Second Division league competition identifiers, historically documented cup names, verification status and County Cup results awaiting exact attribution.
 - `source` and `snapshotDate`: provenance / freshness.
 
-The page renderer `site-v8.js` reads `window.TSL_DATA`, resolves names and badges, and filters matches for each club through stable IDs. It rebuilds each view on page load; the HTML includes a loading/official-source fallback rather than separate hard-coded football lists. Both scripts are loaded in order with `defer`. No database or paid hosting is needed.
+The page renderer `site-v9.js` reads `window.TSL_DATA`, resolves names and badges, and filters matches for each club through stable IDs. It rebuilds each view on page load; the HTML includes a loading/official-source fallback rather than separate hard-coded football lists. Both scripts are loaded in order with `defer`. No database or paid hosting is needed.
 
 ## Individual club profiles
 
 Every listed First/Second Division club has a unique, shareable URL such as [Ramsgate Vale FC](club.html?club=ramsgate-vale-fc) or [Imperial Bar FC](club.html?club=imperial-bar-fc). GitHub Pages serves one lightweight `club.html` template; `club-profile.js` reads the `club` query parameter and loads the appropriate record from `data/league-data.js`. New league clubs can be added without cloning HTML files.
 
 Each profile displays the club badge and division, available league position/points/statistics, scheduled fixtures, recorded results, and league form *only from the recorded results in the snapshot*. Missing home ground/website/Second Division standings are explicitly unconfirmed. Club profiles are linked from the club directory, both league table views and match cards, including home-page previews. External cup opponents do not receive official league profiles.
+
+## Cup competitions and match filters
+
+[Full cup research / verification notes](CUP-COMPETITIONS.md).
+
+- Fixtures and Results now filter by **division** and **competition**, with a separate **club filter** on fixtures.
+- Cup pages use `cups.html` and `cup.html?competition=<competitionId>`. A cup with no verified ties displays an empty state rather than fictional draws or results.
+- Divisional cup names that appear in historic league material are labelled **2026/27 to confirm** until checked. Official County Cup ties have a separate unassigned category. This prevents accidentally showing County Cup results under a divisional cup.
+- Data updates require matching `competitionId`. The verified-update importer blocks assignments to unconfirmed 2026/27 cups.
 
 ## Match centre
 
