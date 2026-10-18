@@ -36,8 +36,17 @@ for(const m of matches){
   assert.ok(els["match-facts"].innerHTML.includes("Competition"),m.id+" facts empty");
   assert.ok(els["match-home"].innerHTML.includes("<strong>"),m.id+" home missing");
   assert.ok(els["match-away"].innerHTML.includes("<strong>"),m.id+" away missing");
-  if(m.status==="final")assert.equal(els["match-score"].textContent,m.homeScore+" – "+m.awayScore);
-  else assert.equal(els["match-score"].textContent,"VS");
+  if(m.status==="final"){
+    assert.equal(els["match-score"].textContent,m.homeScore+" – "+m.awayScore);
+    assert.equal(els["match-details-title"].textContent,"Result details");
+    assert.equal(els["match-status"].textContent,"Full-time");
+    assert.ok(!els["match-date-summary"].textContent.includes("Kick-off"),"Finished result should not show kick-off TBC");
+    assert.ok(els["match-facts"].innerHTML.includes("Final score"));
+  }else{
+    assert.equal(els["match-score"].textContent,"VS");
+    assert.equal(els["match-details-title"].textContent,"Fixture details");
+    assert.equal(els["match-status"].textContent,"Scheduled");
+  }
 }
 const links=vm.createContext({window:{},document:{addEventListener(){},getElementById(){return null},querySelectorAll(){return[]}}});
 vm.runInContext(data,links);
