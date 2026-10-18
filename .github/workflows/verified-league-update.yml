@@ -1,0 +1,71 @@
+name: Verified league data update
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: "Preview first; publish only after checking evidence and output"
+        required: true
+        type: choice
+        options:
+          - preview
+          - publish
+        default: preview
+      publish_confirmation:
+        description: "For publish only, type PUBLISH. Leave blank for preview."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: verified-league-data-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the current main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate source and preview proposed edits
+        run: node scripts/league-update.js --preview
+      - name: Require explicit publish confirmation
+        if: ${{ inputs.operation == 'publish' }}
+        env:
+          CONFIRMATION: ${{ inputs.publish_confirmation }}
+        run: |
+          if [ "$CONFIRMATION" != "PUBLISH" ]; then
+            echo "::error::Publishing needs the exact confirmation PUBLISH"
+            exit 1
+          fi
+      - name: Apply validated updates to the working tree
+        if: ${{ inputs.operation == 'publish' }}
+        run: node scripts/league-update.js --publish
+      - name: Validate club references and scoreboard rendering
+        if: ${{ inputs.operation == 'publish' }}
+        run: |
+          node tests/validate-league-data.js
+          node tests/validate-club-profiles.js
+          node tests/validate-match-centre.js
+          node tests/validate-update-workflow.js
+      - name: Commit the verified published snapshot
+        if: ${{ inputs.operation == 'publish' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/league-data.js data/update-history.json
+          if git diff --cached --quiet; then
+            echo "::error::Nothing to publish"
+            exit 1
+          fi
+          git commit -m "Publish verified league update: $(node -p "require('./updates/pending.json').batchId")"
+          git push origin HEAD:main
