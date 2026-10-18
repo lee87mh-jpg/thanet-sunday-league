@@ -1,0 +1,805 @@
+"use strict";
+/** Canonical data. Edit here, not in individual HTML pages. Dated 18 Oct 2026; not live. */
+window.TSL_DATA=Object.freeze({
+  "schemaVersion": 1,
+  "season": "2026/27",
+  "snapshotDate": "2026-10-18",
+  "source": {
+    "name": "FA Full-Time",
+    "url": "https://fulltime.thefa.com/index.html?league=391033232",
+    "live": false
+  },
+  "divisionLabels": {
+    "first": "First Division",
+    "second": "Second Division"
+  },
+  "clubs": [
+    {
+      "name": "TWS Cramptons FC",
+      "division": "first",
+      "group": "member",
+      "id": "tws-cramptons-fc",
+      "badge": "assets/badges/cramptons_football_club_broadstairs.webp",
+      "profileSlug": "tws-cramptons-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Kings United FC",
+      "division": "first",
+      "group": "member",
+      "id": "kings-united-fc",
+      "badge": "assets/badges/kings_united_football_club.webp",
+      "profileSlug": "kings-united-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Monkton FC",
+      "division": "first",
+      "group": "member",
+      "id": "monkton-fc",
+      "badge": "assets/badges/monkton_fc.webp",
+      "profileSlug": "monkton-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Shrimpos FC",
+      "division": "first",
+      "group": "member",
+      "id": "shrimpos-fc",
+      "badge": "assets/badges/shrimpos_football_club.webp",
+      "profileSlug": "shrimpos-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "AFC Manston",
+      "division": "first",
+      "group": "member",
+      "id": "afc-manston",
+      "badge": "assets/badges/afc_manston.webp",
+      "profileSlug": "afc-manston",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "St Lawrence Tavern FC",
+      "division": "first",
+      "group": "member",
+      "id": "st-lawrence-tavern-fc",
+      "badge": "assets/badges/st_lawrence_tavern.webp",
+      "profileSlug": "st-lawrence-tavern-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Frames United FC",
+      "division": "first",
+      "group": "member",
+      "id": "frames-united-fc",
+      "badge": "assets/badges/frames_united.webp",
+      "profileSlug": "frames-united-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Holman Carpentry FC",
+      "division": "first",
+      "group": "member",
+      "id": "holman-carpentry-fc",
+      "badge": "assets/badges/holman_carpentry_football_club.webp",
+      "profileSlug": "holman-carpentry-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Red Arrows FC",
+      "division": "first",
+      "group": "member",
+      "id": "red-arrows-fc",
+      "badge": "assets/badges/red_arrows_fc.webp",
+      "profileSlug": "red-arrows-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Ramsgate Vale FC",
+      "division": "first",
+      "group": "member",
+      "id": "ramsgate-vale-fc",
+      "badge": "assets/badges/ramsgate_vale_fc.webp",
+      "profileSlug": "ramsgate-vale-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Franklins FC",
+      "division": "first",
+      "group": "member",
+      "id": "franklins-fc",
+      "badge": "assets/badges/franklins_fc.webp",
+      "profileSlug": "franklins-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Sandwich Town FC",
+      "division": "first",
+      "group": "member",
+      "id": "sandwich-town-fc",
+      "badge": "assets/badges/sandwich_town.webp",
+      "profileSlug": "sandwich-town-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Longhead FC",
+      "division": "second",
+      "group": "member",
+      "id": "longhead-fc",
+      "badge": "assets/badges/longhead_fc.webp",
+      "profileSlug": "longhead-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Imperial Bar FC",
+      "division": "second",
+      "group": "member",
+      "id": "imperial-bar-fc",
+      "badge": "assets/badges/imperial_bar_crest.svg",
+      "profileSlug": "imperial-bar-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Birchington FC",
+      "division": "second",
+      "group": "member",
+      "id": "birchington-fc",
+      "badge": "assets/badges/birchington_football_club.webp",
+      "profileSlug": "birchington-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Garden Bar FC",
+      "division": "second",
+      "group": "member",
+      "id": "garden-bar-fc",
+      "badge": null,
+      "profileSlug": "garden-bar-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Thanet Athletic FC",
+      "division": "second",
+      "group": "member",
+      "id": "thanet-athletic-fc",
+      "badge": "assets/badges/thanet_athletic_fc.webp",
+      "profileSlug": "thanet-athletic-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "The Horse & Groom FC",
+      "division": "second",
+      "group": "member",
+      "id": "the-horse-and-groom-fc",
+      "badge": "assets/badges/horse___groom.webp",
+      "profileSlug": "the-horse-and-groom-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "East Kent FC",
+      "division": "second",
+      "group": "member",
+      "id": "east-kent-fc",
+      "badge": "assets/badges/east_kent_crest.svg",
+      "profileSlug": "east-kent-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Minster FC",
+      "division": "second",
+      "group": "member",
+      "id": "minster-fc",
+      "badge": null,
+      "profileSlug": "minster-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Sturry FC",
+      "division": "second",
+      "group": "member",
+      "id": "sturry-fc",
+      "badge": null,
+      "profileSlug": "sturry-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "St Nicholas at Wade FC",
+      "division": "second",
+      "group": "member",
+      "id": "st-nicholas-at-wade-fc",
+      "badge": null,
+      "profileSlug": "st-nicholas-at-wade-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Westgate-on-Sea",
+      "division": null,
+      "group": "additional-crest",
+      "id": "westgate-on-sea",
+      "badge": "assets/badges/westgate_on_sea.webp",
+      "profileSlug": "westgate-on-sea",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Thanet Dons",
+      "division": null,
+      "group": "additional-crest",
+      "id": "thanet-dons",
+      "badge": "assets/badges/thanet_dons.webp",
+      "profileSlug": "thanet-dons",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "The Counting House FC",
+      "division": null,
+      "group": "additional-crest",
+      "id": "the-counting-house-fc",
+      "badge": "assets/badges/the_counting_house_fc.webp",
+      "profileSlug": "the-counting-house-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "King St Arms FC",
+      "division": null,
+      "group": "additional-crest",
+      "id": "king-st-arms-fc",
+      "badge": "assets/badges/king_st_arms_f_c.webp",
+      "profileSlug": "king-st-arms-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Cheriton AFC",
+      "division": null,
+      "group": "cup-opponent",
+      "id": "cheriton-afc",
+      "badge": null,
+      "profileSlug": "cheriton-afc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Dover Knockabout AFC",
+      "division": null,
+      "group": "cup-opponent",
+      "id": "dover-knockabout-afc",
+      "badge": null,
+      "profileSlug": "dover-knockabout-afc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Couch to Premiership FC",
+      "division": null,
+      "group": "cup-opponent",
+      "id": "couch-to-premiership-fc",
+      "badge": null,
+      "profileSlug": "couch-to-premiership-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Hillborough FC",
+      "division": null,
+      "group": "cup-opponent",
+      "id": "hillborough-fc",
+      "badge": null,
+      "profileSlug": "hillborough-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Roar FC",
+      "division": null,
+      "group": "cup-opponent",
+      "id": "roar-fc",
+      "badge": null,
+      "profileSlug": "roar-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    },
+    {
+      "name": "Shepherdswell Spartans FC",
+      "division": null,
+      "group": "cup-opponent",
+      "id": "shepherdswell-spartans-fc",
+      "badge": null,
+      "profileSlug": "shepherdswell-spartans-fc",
+      "homeGround": null,
+      "website": null,
+      "socials": null
+    }
+  ],
+  "standings": {
+    "first": [
+      {
+        "clubId": "tws-cramptons-fc",
+        "played": 4,
+        "won": 4,
+        "drawn": 0,
+        "lost": 0,
+        "goalsFor": 31,
+        "goalsAgainst": 1,
+        "points": 12
+      },
+      {
+        "clubId": "kings-united-fc",
+        "played": 4,
+        "won": 3,
+        "drawn": 1,
+        "lost": 0,
+        "goalsFor": 17,
+        "goalsAgainst": 5,
+        "points": 10
+      },
+      {
+        "clubId": "monkton-fc",
+        "played": 5,
+        "won": 3,
+        "drawn": 1,
+        "lost": 1,
+        "goalsFor": 10,
+        "goalsAgainst": 8,
+        "points": 10
+      },
+      {
+        "clubId": "shrimpos-fc",
+        "played": 5,
+        "won": 3,
+        "drawn": 0,
+        "lost": 2,
+        "goalsFor": 10,
+        "goalsAgainst": 10,
+        "points": 9
+      },
+      {
+        "clubId": "afc-manston",
+        "played": 4,
+        "won": 2,
+        "drawn": 1,
+        "lost": 1,
+        "goalsFor": 11,
+        "goalsAgainst": 5,
+        "points": 7
+      },
+      {
+        "clubId": "st-lawrence-tavern-fc",
+        "played": 4,
+        "won": 2,
+        "drawn": 0,
+        "lost": 2,
+        "goalsFor": 11,
+        "goalsAgainst": 15,
+        "points": 6
+      },
+      {
+        "clubId": "frames-united-fc",
+        "played": 4,
+        "won": 1,
+        "drawn": 1,
+        "lost": 2,
+        "goalsFor": 7,
+        "goalsAgainst": 6,
+        "points": 4
+      },
+      {
+        "clubId": "holman-carpentry-fc",
+        "played": 2,
+        "won": 1,
+        "drawn": 0,
+        "lost": 1,
+        "goalsFor": 5,
+        "goalsAgainst": 7,
+        "points": 3
+      },
+      {
+        "clubId": "red-arrows-fc",
+        "played": 4,
+        "won": 1,
+        "drawn": 0,
+        "lost": 3,
+        "goalsFor": 10,
+        "goalsAgainst": 15,
+        "points": 3
+      },
+      {
+        "clubId": "ramsgate-vale-fc",
+        "played": 4,
+        "won": 1,
+        "drawn": 0,
+        "lost": 3,
+        "goalsFor": 4,
+        "goalsAgainst": 11,
+        "points": 3
+      },
+      {
+        "clubId": "franklins-fc",
+        "played": 3,
+        "won": 0,
+        "drawn": 0,
+        "lost": 3,
+        "goalsFor": 1,
+        "goalsAgainst": 13,
+        "points": 0
+      },
+      {
+        "clubId": "sandwich-town-fc",
+        "played": 3,
+        "won": 0,
+        "drawn": 0,
+        "lost": 3,
+        "goalsFor": 3,
+        "goalsAgainst": 24,
+        "points": 0
+      }
+    ],
+    "second": []
+  },
+  "matches": [
+    {
+      "id": "fx-001",
+      "date": "2026-10-25",
+      "homeId": "afc-manston",
+      "awayId": "shrimpos-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "scheduled",
+      "kickoff": null,
+      "venue": null
+    },
+    {
+      "id": "fx-002",
+      "date": "2026-10-25",
+      "homeId": "monkton-fc",
+      "awayId": "franklins-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "scheduled",
+      "kickoff": null,
+      "venue": null
+    },
+    {
+      "id": "fx-003",
+      "date": "2026-10-25",
+      "homeId": "ramsgate-vale-fc",
+      "awayId": "sandwich-town-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "scheduled",
+      "kickoff": null,
+      "venue": null
+    },
+    {
+      "id": "fx-004",
+      "date": "2026-10-25",
+      "homeId": "red-arrows-fc",
+      "awayId": "frames-united-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "scheduled",
+      "kickoff": null,
+      "venue": null
+    },
+    {
+      "id": "fx-005",
+      "date": "2026-10-25",
+      "homeId": "st-lawrence-tavern-fc",
+      "awayId": "kings-united-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "scheduled",
+      "kickoff": null,
+      "venue": null
+    },
+    {
+      "id": "fx-006",
+      "date": "2026-10-25",
+      "homeId": "tws-cramptons-fc",
+      "awayId": "holman-carpentry-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "scheduled",
+      "kickoff": null,
+      "venue": null
+    },
+    {
+      "id": "fx-007",
+      "date": "2026-11-01",
+      "homeId": "frames-united-fc",
+      "awayId": "afc-manston",
+      "competition": "league",
+      "division": "first",
+      "status": "scheduled",
+      "kickoff": null,
+      "venue": null
+    },
+    {
+      "id": "fx-008",
+      "date": "2026-11-01",
+      "homeId": "kings-united-fc",
+      "awayId": "franklins-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "scheduled",
+      "kickoff": null,
+      "venue": null
+    },
+    {
+      "id": "fx-009",
+      "date": "2026-11-01",
+      "homeId": "monkton-fc",
+      "awayId": "holman-carpentry-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "scheduled",
+      "kickoff": null,
+      "venue": null
+    },
+    {
+      "id": "fx-010",
+      "date": "2026-11-01",
+      "homeId": "shrimpos-fc",
+      "awayId": "tws-cramptons-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "scheduled",
+      "kickoff": null,
+      "venue": null
+    },
+    {
+      "id": "fx-011",
+      "date": "2026-11-01",
+      "homeId": "st-lawrence-tavern-fc",
+      "awayId": "ramsgate-vale-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "scheduled",
+      "kickoff": null,
+      "venue": null
+    },
+    {
+      "id": "rs-001",
+      "date": "2026-10-18",
+      "homeId": "shrimpos-fc",
+      "awayId": "monkton-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "final",
+      "homeScore": 0,
+      "awayScore": 2
+    },
+    {
+      "id": "rs-002",
+      "date": "2026-10-18",
+      "homeId": "cheriton-afc",
+      "awayId": "ramsgate-vale-fc",
+      "competition": "cup",
+      "division": null,
+      "status": "final",
+      "homeScore": 4,
+      "awayScore": 5
+    },
+    {
+      "id": "rs-003",
+      "date": "2026-10-18",
+      "homeId": "frames-united-fc",
+      "awayId": "dover-knockabout-afc",
+      "competition": "cup",
+      "division": null,
+      "status": "final",
+      "homeScore": 0,
+      "awayScore": 5
+    },
+    {
+      "id": "rs-004",
+      "date": "2026-10-18",
+      "homeId": "franklins-fc",
+      "awayId": "couch-to-premiership-fc",
+      "competition": "cup",
+      "division": null,
+      "status": "final",
+      "homeScore": 1,
+      "awayScore": 0
+    },
+    {
+      "id": "rs-005",
+      "date": "2026-10-18",
+      "homeId": "holman-carpentry-fc",
+      "awayId": "hillborough-fc",
+      "competition": "cup",
+      "division": null,
+      "status": "final",
+      "homeScore": 4,
+      "awayScore": 3
+    },
+    {
+      "id": "rs-006",
+      "date": "2026-10-18",
+      "homeId": "sandwich-town-fc",
+      "awayId": "roar-fc",
+      "competition": "cup",
+      "division": null,
+      "status": "final",
+      "homeScore": 13,
+      "awayScore": 1
+    },
+    {
+      "id": "rs-007",
+      "date": "2026-10-18",
+      "homeId": "shepherdswell-spartans-fc",
+      "awayId": "red-arrows-fc",
+      "competition": "cup",
+      "division": null,
+      "status": "final",
+      "homeScore": 4,
+      "awayScore": 0
+    },
+    {
+      "id": "rs-008",
+      "date": "2026-10-11",
+      "homeId": "franklins-fc",
+      "awayId": "red-arrows-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "final",
+      "homeScore": 0,
+      "awayScore": 7
+    },
+    {
+      "id": "rs-009",
+      "date": "2026-10-11",
+      "homeId": "holman-carpentry-fc",
+      "awayId": "ramsgate-vale-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "final",
+      "homeScore": 2,
+      "awayScore": 1
+    },
+    {
+      "id": "rs-010",
+      "date": "2026-10-11",
+      "homeId": "kings-united-fc",
+      "awayId": "afc-manston",
+      "competition": "league",
+      "division": "first",
+      "status": "final",
+      "homeScore": 1,
+      "awayScore": 1
+    },
+    {
+      "id": "rs-011",
+      "date": "2026-10-11",
+      "homeId": "sandwich-town-fc",
+      "awayId": "shrimpos-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "final",
+      "homeScore": 1,
+      "awayScore": 4
+    },
+    {
+      "id": "rs-012",
+      "date": "2026-10-11",
+      "homeId": "st-lawrence-tavern-fc",
+      "awayId": "frames-united-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "final",
+      "homeScore": 0,
+      "awayScore": 3
+    },
+    {
+      "id": "rs-013",
+      "date": "2026-10-11",
+      "homeId": "tws-cramptons-fc",
+      "awayId": "monkton-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "final",
+      "homeScore": 3,
+      "awayScore": 0
+    },
+    {
+      "id": "rs-014",
+      "date": "2026-10-04",
+      "homeId": "frames-united-fc",
+      "awayId": "kings-united-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "final",
+      "homeScore": 2,
+      "awayScore": 3
+    },
+    {
+      "id": "rs-015",
+      "date": "2026-10-04",
+      "homeId": "franklins-fc",
+      "awayId": "shrimpos-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "final",
+      "homeScore": 1,
+      "awayScore": 4
+    },
+    {
+      "id": "rs-016",
+      "date": "2026-10-04",
+      "homeId": "monkton-fc",
+      "awayId": "sandwich-town-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "final",
+      "homeScore": 4,
+      "awayScore": 2
+    },
+    {
+      "id": "rs-017",
+      "date": "2026-10-04",
+      "homeId": "ramsgate-vale-fc",
+      "awayId": "tws-cramptons-fc",
+      "competition": "league",
+      "division": "first",
+      "status": "final",
+      "homeScore": 0,
+      "awayScore": 4
+    }
+  ]
+});
