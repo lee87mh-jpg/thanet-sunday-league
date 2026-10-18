@@ -496,3 +496,13 @@
  .match-row{gap:6px}
  .badge-table-club{gap:4px}
 }
+
+/* Badge alignment and precision-cropped club crests — 18 October 2026 */
+.badge-team.away { flex-direction: row-reverse; }
+.badge-team.away > span:not(.badge-icon):not(.team-circle) { text-align:left; }
+.badge-icon img[src$="_crest.svg"] { padding:0; }
+@media(max-width:590px) {
+  .small-match .team:last-child .badge-team.away { justify-content:flex-start; }
+  .match-row .badge-match-away .badge-team.away,
+  .teams-small .badge-mini-away .badge-team.away { justify-content:flex-start; }
+}
