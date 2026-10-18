@@ -1,5 +1,5 @@
 "use strict";
-/** Canonical data. Edit here, not in individual HTML pages. Dated 18 Oct 2026; not live. */
+/** Canonical, dated football data. Competitions have stable IDs; unverified cup ties are explicitly unassigned. No live feed. */
 window.TSL_DATA=Object.freeze({
   "schemaVersion": 1,
   "season": "2026/27",
@@ -502,7 +502,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "scheduled",
       "kickoff": null,
-      "venue": null
+      "venue": null,
+      "competitionId": "league-first"
     },
     {
       "id": "fx-002",
@@ -513,7 +514,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "scheduled",
       "kickoff": null,
-      "venue": null
+      "venue": null,
+      "competitionId": "league-first"
     },
     {
       "id": "fx-003",
@@ -524,7 +526,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "scheduled",
       "kickoff": null,
-      "venue": null
+      "venue": null,
+      "competitionId": "league-first"
     },
     {
       "id": "fx-004",
@@ -535,7 +538,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "scheduled",
       "kickoff": null,
-      "venue": null
+      "venue": null,
+      "competitionId": "league-first"
     },
     {
       "id": "fx-005",
@@ -546,7 +550,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "scheduled",
       "kickoff": null,
-      "venue": null
+      "venue": null,
+      "competitionId": "league-first"
     },
     {
       "id": "fx-006",
@@ -557,7 +562,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "scheduled",
       "kickoff": null,
-      "venue": null
+      "venue": null,
+      "competitionId": "league-first"
     },
     {
       "id": "fx-007",
@@ -568,7 +574,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "scheduled",
       "kickoff": null,
-      "venue": null
+      "venue": null,
+      "competitionId": "league-first"
     },
     {
       "id": "fx-008",
@@ -579,7 +586,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "scheduled",
       "kickoff": null,
-      "venue": null
+      "venue": null,
+      "competitionId": "league-first"
     },
     {
       "id": "fx-009",
@@ -590,7 +598,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "scheduled",
       "kickoff": null,
-      "venue": null
+      "venue": null,
+      "competitionId": "league-first"
     },
     {
       "id": "fx-010",
@@ -601,7 +610,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "scheduled",
       "kickoff": null,
-      "venue": null
+      "venue": null,
+      "competitionId": "league-first"
     },
     {
       "id": "fx-011",
@@ -612,7 +622,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "scheduled",
       "kickoff": null,
-      "venue": null
+      "venue": null,
+      "competitionId": "league-first"
     },
     {
       "id": "rs-001",
@@ -623,7 +634,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "final",
       "homeScore": 0,
-      "awayScore": 2
+      "awayScore": 2,
+      "competitionId": "league-first"
     },
     {
       "id": "rs-002",
@@ -634,7 +646,8 @@ window.TSL_DATA=Object.freeze({
       "division": null,
       "status": "final",
       "homeScore": 4,
-      "awayScore": 5
+      "awayScore": 5,
+      "competitionId": "kent-county-cup-unassigned"
     },
     {
       "id": "rs-003",
@@ -645,7 +658,8 @@ window.TSL_DATA=Object.freeze({
       "division": null,
       "status": "final",
       "homeScore": 0,
-      "awayScore": 5
+      "awayScore": 5,
+      "competitionId": "kent-county-cup-unassigned"
     },
     {
       "id": "rs-004",
@@ -656,7 +670,8 @@ window.TSL_DATA=Object.freeze({
       "division": null,
       "status": "final",
       "homeScore": 1,
-      "awayScore": 0
+      "awayScore": 0,
+      "competitionId": "kent-county-cup-unassigned"
     },
     {
       "id": "rs-005",
@@ -667,7 +682,8 @@ window.TSL_DATA=Object.freeze({
       "division": null,
       "status": "final",
       "homeScore": 4,
-      "awayScore": 3
+      "awayScore": 3,
+      "competitionId": "kent-county-cup-unassigned"
     },
     {
       "id": "rs-006",
@@ -678,7 +694,8 @@ window.TSL_DATA=Object.freeze({
       "division": null,
       "status": "final",
       "homeScore": 13,
-      "awayScore": 1
+      "awayScore": 1,
+      "competitionId": "kent-county-cup-unassigned"
     },
     {
       "id": "rs-007",
@@ -689,7 +706,8 @@ window.TSL_DATA=Object.freeze({
       "division": null,
       "status": "final",
       "homeScore": 4,
-      "awayScore": 0
+      "awayScore": 0,
+      "competitionId": "kent-county-cup-unassigned"
     },
     {
       "id": "rs-008",
@@ -700,7 +718,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "final",
       "homeScore": 0,
-      "awayScore": 7
+      "awayScore": 7,
+      "competitionId": "league-first"
     },
     {
       "id": "rs-009",
@@ -711,7 +730,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "final",
       "homeScore": 2,
-      "awayScore": 1
+      "awayScore": 1,
+      "competitionId": "league-first"
     },
     {
       "id": "rs-010",
@@ -722,7 +742,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "final",
       "homeScore": 1,
-      "awayScore": 1
+      "awayScore": 1,
+      "competitionId": "league-first"
     },
     {
       "id": "rs-011",
@@ -733,7 +754,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "final",
       "homeScore": 1,
-      "awayScore": 4
+      "awayScore": 4,
+      "competitionId": "league-first"
     },
     {
       "id": "rs-012",
@@ -744,7 +766,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "final",
       "homeScore": 0,
-      "awayScore": 3
+      "awayScore": 3,
+      "competitionId": "league-first"
     },
     {
       "id": "rs-013",
@@ -755,7 +778,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "final",
       "homeScore": 3,
-      "awayScore": 0
+      "awayScore": 0,
+      "competitionId": "league-first"
     },
     {
       "id": "rs-014",
@@ -766,7 +790,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "final",
       "homeScore": 2,
-      "awayScore": 3
+      "awayScore": 3,
+      "competitionId": "league-first"
     },
     {
       "id": "rs-015",
@@ -777,7 +802,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "final",
       "homeScore": 1,
-      "awayScore": 4
+      "awayScore": 4,
+      "competitionId": "league-first"
     },
     {
       "id": "rs-016",
@@ -788,7 +814,8 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "final",
       "homeScore": 4,
-      "awayScore": 2
+      "awayScore": 2,
+      "competitionId": "league-first"
     },
     {
       "id": "rs-017",
@@ -799,7 +826,58 @@ window.TSL_DATA=Object.freeze({
       "division": "first",
       "status": "final",
       "homeScore": 0,
-      "awayScore": 4
+      "awayScore": 4,
+      "competitionId": "league-first"
+    }
+  ],
+  "competitions": [
+    {
+      "id": "league-first",
+      "name": "First Division",
+      "kind": "league",
+      "division": "first",
+      "verification": "confirmed",
+      "notes": "First Division 2026/27"
+    },
+    {
+      "id": "league-second",
+      "name": "Second Division",
+      "kind": "league",
+      "division": "second",
+      "verification": "confirmed",
+      "notes": "Second Division 2026/27; no verified league matches in saved snapshot"
+    },
+    {
+      "id": "first-division-cup",
+      "name": "First Division Cup",
+      "kind": "cup",
+      "division": "first",
+      "verification": "historical-name-pending-2026",
+      "notes": "Historical divisional cup terminology; exact 2026/27 title and eligibility require league confirmation."
+    },
+    {
+      "id": "second-division-cup",
+      "name": "Second Division Cup",
+      "kind": "cup",
+      "division": "second",
+      "verification": "historical-name-pending-2026",
+      "notes": "Historical divisional cup terminology; exact 2026/27 title and eligibility require league confirmation."
+    },
+    {
+      "id": "kent-sunday-junior-cup",
+      "name": "Kent Sunday Junior Cup",
+      "kind": "cup",
+      "division": null,
+      "verification": "confirmed-existence",
+      "notes": "Kent FA county competition exists; no October 2026 match in this dataset has been individually verified as belonging to this cup."
+    },
+    {
+      "id": "kent-county-cup-unassigned",
+      "name": "Kent FA County Cups — cup name to confirm",
+      "kind": "cup",
+      "division": null,
+      "verification": "pending-match-identification",
+      "notes": "18 October results labelled CC by FA Full-Time; per-match exact county cup not confirmed."
     }
   ]
 });
