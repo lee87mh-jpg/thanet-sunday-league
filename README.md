@@ -1,31 +1,47 @@
-# Thanet Sunday Football League — Website Prototype
+# Thanet Sunday Football League — website
 
-An independent, monochrome, badge-led website prototype for the **Martini Airport Transfers Thanet Sunday Football League**, season 2026/27. Built with HTML, CSS and vanilla JavaScript for free hosting on GitHub Pages.
+Independent website concept for the **Martini Airport Transfers Thanet Sunday Football League**, season 2026/27, hosted on GitHub Pages.
 
-**Preview URL after GitHub Pages is enabled:** https://lee87mh-jpg.github.io/thanet-sunday-league/
+**Website:** https://lee87mh-jpg.github.io/thanet-sunday-league/
 
-## Pages included
-- Authentic black-and-white league badge in the header, hero and footer (optimised from supplied image)
-- Black, white and soft grey theme, replacing the initial green palette
-- Responsive home / matchday preview
-- First Division table snapshot
-- Fixtures and results with filters
-- Cup section, club directory, news, sponsor and community section
+## Site pages
 
-## Football data and permission
-- Current data in \`app.js\` was checked against the public [FA Full-Time league page](https://fulltime.thefa.com/index.html?league=391033232) **on 18 October 2026**.
-- The displayed tables, fixtures and results **do not auto-update**. Confirm any changes on FA Full-Time.
-- The Second Division table is intentionally withheld until accurate official data is provided.
-- Official FA Full-Time embeds require an authorised league administrator to open **Media → Code Snippets** in FA Full-Time and supply approved table / fixtures / results embeds. The FA does not make these codes public.
-- The site is a prototype and must not be described as officially endorsed by the league or sponsor until they give their approval. No third-party logos have been copied.
+| Page | URL | Purpose |
+| --- | --- | --- |
+| Home | `index.html` | Photographic hero, matchday preview, standings and news previews |
+| Tables | `tables.html` | First Division table and Second Division placeholder |
+| Fixtures | `fixtures.html` | Club-filterable upcoming fixtures |
+| Results | `results.html` | League and cup result filters |
+| Cups | `cups.html` | Knockout overview and recent cup scores |
+| Clubs | `clubs.html` | Club lists with placeholders for individual club crests |
+| News | `news.html` | League news and announcements |
+| About | `about.html` | League community information and sponsor |
 
-## Deployment
-1. GitHub repo → Settings → Pages.
-2. Under Build and deployment choose **Deploy from a branch**.
-3. Branch: **main**, folder: **/(root)**, then Save.
-4. Allow GitHub Pages to publish and visit the preview URL above.
+All pages use the shared `styles.css` and `app.js`. Navigation uses relative .html URLs so it works on GitHub Pages under this repository path, and on a custom domain later. No framework, paid hosting, backend or database is required.
 
-## Updating
-Edit \`SNAPSHOT\` at the top of \`app.js\` and make a commit. If approved league feeds are later supplied, replace the static snapshot views with their official embeds. CSS lives in \`styles.css\`; markup lives in \`index.html\`. The badge asset is \`assets/thanet-league-badge.svg\`.
+## Football data / permissions
 
-There are no npm dependencies, server bills, databases or build steps. Hosting as a public repository on GitHub Pages is free under GitHub's current plan offering.
+- **The figures are dated snapshots, not live:** FA Full-Time records checked **18 October 2026**. Confirm the latest information on [the league's FA Full-Time page](https://fulltime.thefa.com/index.html?league=391033232).
+- First Division data, fixtures and results live in `app.js`. The Second Division standings are intentionally blank until the league provides verified information.
+- Approved FA Full-Time embeds require a league administrator's cooperation. Do not imply permission to use official feeds, league badges or material before it is obtained.
+- Website prototype is *not yet an authorised official league website*.
+
+## Branding & images
+
+- Badge: `assets/thanet-league-badge.svg`.
+- Hero photo: `assets/hero-celebration.avif`.
+- Cup photo: `assets/cup-celebration.avif`.
+- Additional club badges can be added to the assets folder and mapped to each club name when permission has been obtained.
+- The site uses dark charcoal, white, grey, and a diagonal texture over the photos.
+
+## Deploy
+
+GitHub → Settings → Pages → **Deploy from a branch** → **main** / **/(root)** → Save.
+
+After pushing a change, allow Pages to refresh. The HTML links and versioned CSS/JS query strings minimise stale browser caching.
+
+## Next improvements
+
+1. Add approved club badge images and eventually create individual club profiles.
+2. Connect confirmed official FA Full-Time embed feeds for fixtures, results and tables.
+3. Add league-approved contact information, documents and additional sponsor assets.
