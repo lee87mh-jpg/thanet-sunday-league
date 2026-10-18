@@ -25,7 +25,7 @@
       '<div class="profile-match-meta"><span>'+clean(dateLabel(match.date))+'</span><span>'+type+'</span></div>'+
       '<div class="profile-match-line">'+
         '<span class="profile-team-home">'+badgeTeam(name(match.homeId),"xs","home")+'</span>'+
-        '<span class="profile-match-score'+(finished?' final':'')+'">'+result+'</span>'+
+        matchScoreLink(match.id,'<span class="profile-match-score'+(finished?' final':'')+'">'+result+'</span>',name(match.homeId),name(match.awayId),"profile-score-link")+
         '<span class="profile-team-away">'+badgeTeam(name(match.awayId),"xs","away")+'</span>'+
       '</div></article>';
   }
