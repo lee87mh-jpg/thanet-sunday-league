@@ -44,6 +44,7 @@ Use the `pending.json` object with this schema (fictional values below are **exa
       "awayId": "shrimpos-fc",
       "competition": "league",
       "division": "first",
+      "competitionId": "league-first",
       "status": "final",
       "homeScore": 2,
       "awayScore": 1
@@ -52,7 +53,9 @@ Use the `pending.json` object with this schema (fictional values below are **exa
 }
 ```
 
-The fictional score **must not be published** unless it is genuinely verified. To update an already listed match, use its **existing** match ID. Keeping the same ID preserves all match links. New matches require a unique stable ID such as `m-20261101-club-a-club-b`; their `homeId` and `awayId` must already exist in `data/league-data.js`. For future fixtures use `"status":"scheduled"` and omit `homeScore` and `awayScore`. Optional `kickoff` must be `HH:MM`; `venue` must be verified. If a club isn't registered yet, add and confirm it in the canonical club registry first; never silently substitute a similar name.
+The fictional score **must not be published** unless it is genuinely verified.
+
+Cup fixtures or results also require a valid `competitionId` from `data/league-data.js`. Historical 2026/27 cup names still marked pending must **not** receive new match assignments until the exact competition name and eligibility are confirmed. The saved County Cup matches have the temporary `cup-unassigned` identifier; update them to a specific verified cup only once each tie is individually checked. See [CUP-COMPETITIONS.md](CUP-COMPETITIONS.md). To update an already listed match, use its **existing** match ID. Keeping the same ID preserves all match links. New matches require a unique stable ID such as `m-20261101-club-a-club-b`; their `homeId` and `awayId` must already exist in `data/league-data.js`. For future fixtures use `"status":"scheduled"` and omit `homeScore` and `awayScore`. Optional `kickoff` must be `HH:MM`; `venue` must be verified. If a club isn't registered yet, add and confirm it in the canonical club registry first; never silently substitute a similar name.
 
 **Table updates:** supplying `standings.first` or `standings.second` replaces that entire division with its officially verified rows. Each row uses `clubId`, `played`, `won`, `drawn`, `lost`, `goalsFor`, `goalsAgainst`, `points`. It must cover all clubs currently assigned to that division; this prevents partial tables from being misrepresented as complete. Points deductions may exist, so points need not equal 3 × wins + draws, but must not exceed that maximum. If league membership is different, reconcile it and get approval **before** publishing a new table.
 
