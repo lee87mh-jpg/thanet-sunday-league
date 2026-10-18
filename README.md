@@ -84,4 +84,4 @@ The FA's official **Media → Code Snippets** live embeds are a later, permissio
 
 ## Future work
 
-See [ROADMAP.md](ROADMAP.md) for the saved development plan. **Club profiles and the initial Match Centre are implemented.** Next priority: a reliable authorised data-update workflow. Detailed match reports and club information await verified sources.
+See [ROADMAP.md](ROADMAP.md) for the saved development plan. **Club profiles, the Match Centre, verified update workflows, and cup/competition filters are implemented.** Next planned build: the statistics centre. Official 2026/27 cup participation and cup draws await league confirmation. Detailed match reports and club information await verified sources.
