@@ -6,7 +6,7 @@ const path=require("node:path");
 const vm=require("node:vm");
 const root=path.resolve(__dirname,"..");
 const read=p=>fs.readFileSync(path.join(root,p),"utf8");
-const data=read("data/league-data.js"),renderer=read("site-v8.js"),matchScript=read("match-centre.js"),html=read("match.html");
+const data=read("data/league-data.js"),renderer=read("site-v9.js"),matchScript=read("match-centre.js"),html=read("match.html");
 const sb={window:{}};
 vm.runInNewContext(data,sb);
 const styles=read("match-layout-v2.css");
