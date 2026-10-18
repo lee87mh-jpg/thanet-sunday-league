@@ -15,14 +15,23 @@
     return href?'<a class="match-club-link" href="'+href+'" aria-label="View '+clean(c.name)+' profile">'+body+'</a>':'<div class="match-club-link">'+body+'</div>';
   };
   const facts=match=>{
+    const played=match.status==="final";
     const rows=[
       ["Competition",kind(match)+(match.competition==="league"&&match.division&&db.divisionLabels[match.division]?" · "+db.divisionLabels[match.division]:"")],
-      ["Match date",dateText(match.date)],
-      ["Kick-off",match.kickoff||"Not supplied in this snapshot"],
-      ["Venue",match.venue||"Not confirmed in this snapshot"],
-      ["Status",match.status==="final"?"Final score recorded":"Listed as scheduled on 18 October 2026"],
-      ["Information source",db.source.name+" · snapshot "+db.snapshotDate.split("-").reverse().join("/")]
+      ["Match date",dateText(match.date)]
     ];
+    if(played){
+      rows.push(["Final score",match.homeScore+" – "+match.awayScore]);
+      // An unknown kick-off or ground is irrelevant to a completed scorecard.
+      if(match.kickoff)rows.push(["Kick-off",match.kickoff]);
+      if(match.venue)rows.push(["Venue",match.venue]);
+      rows.push(["Status","Result recorded"]);
+    }else{
+      rows.push(["Kick-off",match.kickoff||"To be confirmed"]);
+      rows.push(["Venue",match.venue||"To be confirmed"]);
+      rows.push(["Status","Scheduled at the saved snapshot date"]);
+    }
+    rows.push(["Information source",db.source.name+" · snapshot "+db.snapshotDate.split("-").reverse().join("/")]);
     return '<dl class="match-facts">'+rows.map(x=>'<div><dt>'+clean(x[0])+'</dt><dd>'+clean(x[1])+'</dd></div>').join("")+'</dl>';
   };
   const relatedMatches=match=>{
@@ -59,12 +68,13 @@
     const pageType=final?"Result":"Fixture";
     const back=final?"./results.html":"./fixtures.html";
     byId("match-title").textContent=pageType+" · "+db.season;
+    byId("match-details-title").textContent=final?"Result details":"Fixture details";
     byId("match-competition").textContent="MATCH CENTRE · "+kind(match).toUpperCase();
     byId("match-home").innerHTML=detailsLink(home);
     byId("match-away").innerHTML=detailsLink(away);
     byId("match-score").textContent=final?match.homeScore+" – "+match.awayScore:"VS";
-    byId("match-status").textContent=final?"Final score · recorded snapshot":"Scheduled in the saved fixture list";
-    byId("match-date-summary").textContent=dateText(match.date)+(match.kickoff?" · "+match.kickoff:(final?" · Final result":" · Kick-off to be confirmed"));
+    byId("match-status").textContent=final?"Full-time":"Scheduled";
+    byId("match-date-summary").textContent=dateText(match.date)+(final?"":(match.kickoff?" · "+match.kickoff:" · Kick-off to be confirmed"));
     byId("match-back-crumb").href=back;
     byId("match-back-crumb").textContent=final?"Results":"Fixtures";
     byId("match-return").href=back;
