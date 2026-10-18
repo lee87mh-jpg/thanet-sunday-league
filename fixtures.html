@@ -9,9 +9,10 @@
   <meta property="og:type" content="website">
   <title>Fixtures & Matchdays | Thanet Sunday Football League</title>
   <link rel="icon" type="image/svg+xml" href="./assets/thanet-league-badge.svg">
-  <link rel="stylesheet" href="./styles.css?v=20261018-match-centre-v1">
-  <script src="./data/league-data.js?v=20261018-verified-updates-v1" defer></script>
-  <script src="./site-v8.js?v=20261018-verified-updates-v1" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=20261018-cups-v1">
+  <script src="./data/league-data.js?v=20261018-cups-v1" defer></script>
+  <script src="./site-v9.js?v=20261018-cups-v1" defer></script>
+  <link rel="stylesheet" href="./cup-layout.css?v=20261018-cups-v1">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -33,7 +34,11 @@
 <section class="page-hero" aria-labelledby="page-title"><div class="shell page-hero-inner"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="./index.html">Home</a><span aria-hidden="true">/</span><span>Fixtures & Matchdays</span></nav><p class="eyebrow light">MATCH CENTRE</p><h1 id="page-title">Upcoming fixtures</h1><p>See when Thanet's Sunday league teams are playing next. Confirm times, grounds and postponements with FA Full-Time.</p></div></section>
 <section class="section" id="fixtures" aria-labelledby="fixtures-title"><div class="shell">
   <div class="section-heading"><div><p class="eyebrow">COMING UP</p><h2 id="fixtures-title">Upcoming fixtures.</h2><p>Plan your next Sunday by finding the teams playing near you.</p></div><a class="text-link" href="https://fulltime.thefa.com/fixtures.html?league=391033232" target="_blank" rel="noopener noreferrer">Official fixture list ↗</a></div>
-  <div class="filter-row"><label for="fixture-team">Filter by club</label><select id="fixture-team"><option value="">All clubs</option></select><span class="filter-hint">Dates can change — confirm kick-off time and venue on FA Full-Time.</span></div>
+  <div class="match-filters" role="group" aria-label="Filter upcoming fixtures">
+  <div class="match-filter"><label for="fixture-division">Division</label><select id="fixture-division"><option value="all">All divisions</option><option value="first">First Division</option><option value="second">Second Division</option></select></div>
+  <div class="match-filter"><label for="fixture-competition">Competition</label><select id="fixture-competition"><option value="all">All competitions</option></select></div>
+  <div class="match-filter"><label for="fixture-team">Club</label><select id="fixture-team"><option value="">All clubs</option></select></div>
+</div><p id="fixture-count" class="match-filter-count" role="status"></p><p class="filter-caveat">County Cup matches without a confirmed division remain under “All divisions”. Times and venues should be checked with FA Full-Time.</p>
   <div id="fixtures-list" class="match-grid" aria-live="polite"><p class="empty">Loading the saved league snapshot… <a href="https://fulltime.thefa.com/index.html?league=391033232" target="_blank" rel="noopener noreferrer">FA Full-Time ↗</a></p></div>
 </div></section>
 </main>
