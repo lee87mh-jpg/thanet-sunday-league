@@ -25,6 +25,7 @@
     #main .match-page-middle{text-align:center;min-width:72px}
     #main .match-page-score{font-size:clamp(2rem,5vw,4rem);font-weight:900;white-space:nowrap}
     #main .match-page-meta{color:#ddd;text-align:center}
+    #main .match-page-middle p{white-space:nowrap}
     #main .match-page-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
     #main .match-facts>div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:15px;padding:12px 0;border-bottom:1px solid #eee}
     #main .match-facts dd{margin:0}
@@ -40,7 +41,7 @@
   </style>
   <script src="./data/league-data.js?v=20261018-match-centre-v1" defer></script>
   <script src="./site-v6.js?v=20261018-match-centre-fix-v2" defer></script>
-  <script src="./match-centre.js?v=20261018-match-centre-fix-v2" defer></script>
+  <script src="./match-centre.js?v=20261018-match-centre-polish-v3" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -82,7 +83,7 @@
     <div id="match-content" hidden>
       <div class="match-page-columns">
         <section class="profile-panel" aria-labelledby="match-details-title">
-          <header class="profile-panel-head"><div><p class="eyebrow">MATCH INFORMATION</p><h2 id="match-details-title">Fixture details</h2></div></header>
+          <header class="profile-panel-head"><div><p class="eyebrow">MATCH INFORMATION</p><h2 id="match-details-title">Match details</h2></div></header>
           <div id="match-facts"></div>
         </section>
         <section class="profile-panel" aria-labelledby="match-related-title">
